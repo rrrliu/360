@@ -9,7 +9,7 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
+  height: 56px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -17,6 +17,18 @@
   font-size: calc(10px + 2vmin);
   color: white;
 }
+
+.dash-header {
+  background-color: #ffc107;
+  height: 56px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+}
+
 
 .App-link {
   color: #61dafb;
