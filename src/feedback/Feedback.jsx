@@ -5,7 +5,9 @@ export default class Feedback extends Component {
         return (
             <div>
                 <p>Rate the following feedback:</p>
-                <input type="text" value={this.props.text} unselectable="on" />
+                <textarea disabled>
+                    {this.props.text}
+                </textarea>
                 <div className="container">
                     <div className="demo">
                         <div className="ratingControl">
