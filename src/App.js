@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
+import GivePage from './feedback/GivePage';
+import ReviewPage from './feedback/ReviewPage';
 import './App.css';
 
 class App extends Component {
