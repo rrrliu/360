@@ -3,12 +3,12 @@
 }
 
 .container-drag {
-  text-align:center;
+  text-align: center;
 }
 
 .wip {
   position: absolute;
-  height: 150px;
+  height: 500px;
   width: 100%;
   top: 0;
   background-color: #EEEEEE;
@@ -26,41 +26,40 @@
 .task-header{
   display: inline-block;
   background-color: skyblue;
-  width: 100%
+  width: 100%;
 }
 
-.chest-container{
-
-}
-
-.harish-container{
+.chest-containers {
   position: absolute;
-  height: 150px;
-  width: 33%;
+  width: 100%;
+  right: 0;
   bottom: 0;
-  left: 10;
-  margin-left: 400px;
+  left: 0;
+}
+
+.harish-container {
+  float: left;
+  position: relative;
+  height: 300px;
+  width: 33%;
   background-color: #9E9E9E;
   border-left: 1px dotted;
 }
 
 .isabelle-container{
-  position: absolute;
-  height: 150px;
+  float: left;
+  position: relative;
+  height: 300px;
   width: 33%;
-  bottom: 0;
-  left: 10;
-  margin-left: 800px;
   background-color: #9E9E9E;
   border-left: 1px dotted;
 }
 
 .andrew-container{
-  position: absolute;
-  height: 150px;
+  float: left;
+  position: relative;
+  height: 300px;
   width: 33%;
-  bottom: 0;
-  left: 10;
   background-color: #9E9E9E;
   border-left: 1px dotted;
 }
