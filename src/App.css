@@ -1,32 +1,63 @@
-.App {
+body {
+  padding-top: 50px;
+  background-color: #eee;
   text-align: center;
+  font-family: 'Open Sans', sans-serif;  
+}
+.result {
+  font-size: 30px;
+}
+.reset {
+  font-style: italic;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.reset:hover {
+  text-decoration: underline;
+}
+button,
+input {
+  padding: 7.5px;  
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+  border: 0;
+  border-radius: 2px;
+  background:#eee;
+}
+button:focus,
+input:focus {
+  outline:0;
+}
+button {
+    min-width: 10px;
+    cursor: pointer;
+}
+button + button {  
+  margin-left: 5px;
+}
+button:hover,
+input:hover{
+    background: #fff;
+}
+a {
+  color: #000;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
+.counter {
+  color: #000;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.member {
+  display: inline-block;
+  margin-left: 20px;
 }
-
-.App-link {
-  color: #61dafb;
+.category {
+  margin-bottom: 50px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.category h1 {
+  text-transform: lowercase;
+  font-style: italic;
+  font-size: 30px;
+  font-weight: normal;
+  letter-spacing: 2px;
 }
