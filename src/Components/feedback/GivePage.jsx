@@ -8,6 +8,7 @@ export default class GivePage extends Component {
                 <TextBox name='Isabelle' />
                 <TextBox name='Harish' />
                 <TextBox name='Andrew' />
+                <input type="submit" value="Submit"/>
             </div>
         )
     }

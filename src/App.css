@@ -1,21 +1,67 @@
-.App {
+body {
+  padding-top: 50px;
+  background-color: #eee;
   text-align: center;
+  font-family: 'Open Sans', sans-serif;  
 }
 
-.container-drag {
-  text-align:center;
+.result {
+  font-size: 30px;
+}
+.reset {
+  font-style: italic;
+  letter-spacing: 2px;
+  cursor: pointer;
+}
+.reset:hover {
+  text-decoration: underline;
+}
+button,
+input {
+  padding: 7.5px;  
+  font-size: 16px;
+  color: #000;
+  text-align: center;
+  border: 0;
+  border-radius: 2px;
+  background:#eee;
+}
+button:focus,
+input:focus {
+  outline:0;
+}
+button {
+    min-width: 10px;
+    cursor: pointer;
+}
+button + button {  
+  margin-left: 5px;
+}
+button:hover,
+input:hover{
+    background: #fff;
+}
+a {
+  color: #000;
 }
 
-.App-link {
-    color: #61dafb;
+.counter {
+  color: #000;
 }
-
-.header{
+.member {
   display: inline-block;
-  margin: 0;
-  padding: 0;
-  background-color: #E0E0E0;
-  width: 100%;
+  margin-left: 20px;
+}
+.category {
+  margin-bottom: 50px;
+}
+
+.category h1 {
+  text-transform: lowercase;
+  font-style: italic;
+  font-size: 30px;
+  font-weight: normal;
+  letter-spacing: 2px;
 }
 
 .star {
