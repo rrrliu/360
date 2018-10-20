@@ -8,7 +8,7 @@ export default class Feedback extends Component {
                 <textarea disabled>
                     {this.props.text}
                 </textarea>
-                <div className="container">
+                <div className="">
                     <div className="demo">
                         <div className="ratingControl">
                         <input type="radio" id="rating-5" name="rating" value="5" />
