@@ -28,6 +28,13 @@
   color: black;
 }
 
+.task-header {
+  display: inline-block;
+  background-color: #ffc107;
+  width: 100%;
+  box-shadow: #888 0px 2px 4px;
+}
+
 
 .App-link {
     color: #61dafb;
@@ -35,7 +42,7 @@
 
 .wip {
   position: absolute;
-  height: 150px;
+  height: 25%;
   width: 100%;
   top: 0;
   background-color: #EEEEEE;
@@ -48,12 +55,6 @@
   padding: 0;
   background-color: #E0E0E0;
   width: 100%;
-}
-
-.task-header{
-  display: inline-block;
-  background-color: skyblue;
-  width: 100%
 }
 
 .star {
@@ -173,38 +174,37 @@ input:checked ~ .ratingControl-stars:active {
 }
 
 
-.chest-container{
-
+.chest-containers {
+  position: absolute;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 .harish-container{
-  position: absolute;
-  height: 150px;
+  float: left;
+  position: relative;
+  height: 300px;
   width: 33%;
-  bottom: 0;
-  left: 10;
-  margin-left: 400px;
   background-color: #9E9E9E;
   border-left: 1px dotted;
 }
 
 .isabelle-container{
-  position: absolute;
-  height: 150px;
+  float: left;
+  position: relative;
+  height: 300px;
   width: 33%;
-  bottom: 0;
-  left: 10;
-  margin-left: 800px;
   background-color: #9E9E9E;
   border-left: 1px dotted;
 }
 
 .andrew-container{
-  position: absolute;
-  height: 150px;
+  float: left;
+  position: relative;
+  height: 300px;
   width: 33%;
-  bottom: 0;
-  left: 10;
   background-color: #9E9E9E;
   border-left: 1px dotted;
 }

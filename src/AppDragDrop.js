@@ -32,7 +32,7 @@ export default class AppDragDrop extends Component {
                this.labelCounter ++;
                if(cat != "wip"){
                    toAdd = {name: task.name, category: "wip", bgcolor: task.bgcolor, label: this.labelCounter};
-               } else {
+               } else if (task.category != "wip") {
                    return
                }
                task.category = cat;
