@@ -4,7 +4,7 @@ import GivePage from './Components/feedback/GivePage';
 import ReviewPage from './Components/feedback/ReviewPage';
 import Distribution from './Distribution/Distribution'
 import PropTypes from 'prop-types';
-import './App.csgas';
+import './App.css';
 import Dashboard from './Components/Dashboard/Dashboard'
 import SemanticSurvey from './Components/Semantic/SemanticSurvey'
 
