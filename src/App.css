@@ -2,33 +2,20 @@
   text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.container-drag {
+  text-align:center;
 }
 
 .App-link {
-  color: #61dafb;
+    color: #61dafb;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header{
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  background-color: #E0E0E0;
+  width: 100%;
 }
 
 .star {
@@ -62,7 +49,7 @@
   top: 0;
   width: 75px;
   height: 65px;
-  background-image: url('./feedback/emptydiamond.svg');
+  background-image: url('Components/feedback/emptydiamond.svg');
   background-size: auto 65px;
   background-repeat: no-repeat;
   cursor: pointer;
@@ -74,7 +61,7 @@
 .ratingControl-stars:hover,
 input:checked ~ .ratingControl-stars,
 .ratingControl-stars:hover ~ .ratingControl-stars {
-  background-image: url('./feedback/diamond.svg');
+  background-image: url('Components/feedback/diamond.svg');
 }
 
 /* I commented out the line below because it was causing an ESLint error.
@@ -84,7 +71,7 @@ Dunno if it's actually important lol
 /* .ratingControl-stars:active, */
 .ratingControl-stars:active ~ .ratingControl-stars,
 input:checked ~ .ratingControl-stars:active {
-  background-image: url('./feedback/diamond.svg');
+  background-image: url('Components/feedback/diamond.svg');
 }
 
 .ratingControl-stars--05 {
@@ -146,4 +133,3 @@ input:checked ~ .ratingControl-stars:active {
   padding: 40px;
   margin-bottom: 60px;
 }
-

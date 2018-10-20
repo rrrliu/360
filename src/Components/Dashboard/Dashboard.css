@@ -1,0 +1,10 @@
+.dash-header {
+    background-color: #ffc107;
+    height: 56px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: calc(10px + 2vmin);
+    color: black;
+}
