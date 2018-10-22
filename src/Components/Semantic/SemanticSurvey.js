@@ -10,7 +10,7 @@ export default class SemanticSurvey extends Component {
             {name:"efficient", category:"harish", bgcolor:"skyblue", label: 3},
             {name:"productive",category:"isabelle", bgcolor: "yellow", label: 4}
         ]
-    }
+    };
 
     onDragStart = (ev, id) => {
         console.log('dragstart:',id);

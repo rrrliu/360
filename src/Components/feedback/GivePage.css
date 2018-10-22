@@ -1,0 +1,22 @@
+.giveFeedback {
+    margin: 0 auto;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.feedbackText {
+    width: 100%;
+}
+.feedbackText:focus {
+    outline: none;
+}
+.feedbackTextContainer {
+    width: 50%;
+    margin: 2% 0;
+    text-align: left;
+}
+.feedbackTextTitle {
+    font-size: 16px !important;
+    color: rgba(0, 0, 0, 0.78) !important;
+}
