@@ -5,10 +5,12 @@ export default class GivePage extends Component {
     render() {
         return (
             <div>
-                <TextBox name='Isabelle' />
-                <TextBox name='Harish' />
-                <TextBox name='Andrew' />
-                <input type="submit" value="Submit"/>
+                <form action="POST">
+                    <TextBox name='Isabelle' />
+                    <TextBox name='Harish' />
+                    <TextBox name='Andrew' />
+                    <input type="submit" value="Submit"/>
+                </form>
             </div>
         )
     }
