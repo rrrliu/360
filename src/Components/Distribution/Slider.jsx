@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types';
+import PropTypes from 'prop-types'
+import firebase from '../../firebase';
 
 export default class Slider extends Component {
   
@@ -13,10 +14,12 @@ export default class Slider extends Component {
 
     increment() {
         this.setState({count: this.state.count + this.state.step});
+        this.addData();
     }
     
     decrement() {
         this.setState({count: this.state.count - this.state.step});
+        this.addData();
     }
   
     update(e) {
@@ -38,6 +41,17 @@ export default class Slider extends Component {
                 <Button onClick={() => this.increment()}>+</Button>
             </div>
         )
+    }
+
+    addData() {
+        // Firebase stuff
+        const db = firebase.firestore();
+        db.settings({
+            timestampsInSnapshots: true
+        })
+        const userRef = db.collection("users").add({
+            test: this.state.count
+        })
     }
     
 }

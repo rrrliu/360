@@ -1,6 +1,5 @@
-// src/firebase.js
 import firebase from 'firebase'
-var config = {
+const config = {
     apiKey: "AIzaSyCs6dGG1M-AK2JhRtrY0RywMp-_DeUUZgU",
     authDomain: "pierate360.firebaseapp.com",
     databaseURL: "https://pierate360.firebaseio.com",
