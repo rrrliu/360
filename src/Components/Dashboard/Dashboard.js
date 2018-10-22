@@ -7,6 +7,7 @@ import Divider from '@material-ui/core/Divider';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import { NavLink } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import amber from '@material-ui/core/colors/amber'
 import './Dashboard.css'
@@ -34,12 +35,15 @@ class Dashboard extends Component {
             if (!(weeks[key]['current'])) {
                 return <ListItem button>
                     <ListItemText primary={weeks[key]['string']}/>
-                </ListItem>;
+                </ListItem>
+
             }
             else {
-                return <ListItem>
+                return <NavLink to="/distribution" className= "current-button">
+                <ListItem button>
                     <ListItemText primary={weeks[key]['string']}/>
                 </ListItem>
+                </NavLink>
             }
         });
         return (
