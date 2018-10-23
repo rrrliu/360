@@ -10,7 +10,7 @@ import CardContent from '@material-ui/core/CardContent';
 import {NavLink} from "react-router-dom";
 import NavButton from "../NavButton/NavButton";
 
-const teammates = ['harish', 'isabelle', 'andrew', 'richard'];
+const teammates = ['Harish', 'Isabelle', 'Andrew', 'Richard'];
 
 export default class GivePage extends Component{
     qualList = teammates.map((name) => {
@@ -34,7 +34,7 @@ export default class GivePage extends Component{
                         </Typography>
                     </Toolbar>
                 </AppBar>
-                <Typography align='center' variant='title' className='pageInstructions'>Write out some comments for your teammates with regard to what they do well, and how they could improve. Be specific (this will get graded)!</Typography>
+                <Typography align='center' variant='title' className='pageInstructions'>Write out some comments for your crew members with regard to what they do well, and how they could improve. Be specific (this will get graded)!</Typography>
                 <form className='giveFeedback'>
                     {this.qualList}
                 </form>

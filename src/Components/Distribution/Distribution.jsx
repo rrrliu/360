@@ -34,6 +34,7 @@ export default class Distribution extends Component{
                             How often is each crew member present during the meetings? How engaged are they during the
                             meetings?
                         </Typography>
+                        <p></p>
                         <SliderContainer teammates={teammates}/>
                     </CardContent>
                 </Card>
@@ -45,6 +46,7 @@ export default class Distribution extends Component{
                         <Typography className='categorySubtitle'>
                             How much does each crew member understand the project and the ideas of others? How well do they
                             offer suggestions?
+                        <p></p>
                         </Typography>
                         <SliderContainer teammates={teammates}/>
                     </CardContent>
@@ -58,6 +60,7 @@ export default class Distribution extends Component{
                             How much time does each crew member commit to the project? How much do they get done in that
                             time?
                         </Typography>
+                        <p></p>
                         <SliderContainer teammates={teammates}/>
                     </CardContent>
                 </Card>
@@ -70,6 +73,7 @@ export default class Distribution extends Component{
                             To what extent does each crew member offer new ideas? How often do they propose new approaches
                             to the same problems?
                         </Typography>
+                        <p></p>
                         <SliderContainer teammates={teammates}/>
                     </CardContent>
                 </Card>
