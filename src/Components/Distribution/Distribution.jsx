@@ -1,187 +1,70 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import './Distribution.css';
+import Slider from './Slider';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+import SliderContainer from './SliderContainer'
 
-class Distribution extends Component {
-  constructor(properties) {
-    super(properties);
-    this.state = {
-      step: properties.initialStep,
-      count: properties.initialCount
-    };
-  }
+export default function Distribution(props){
+  
 
-  increment() {
-    this.setState({count: this.state.count + this.state.step});
-  }
-
-  decrement() {
-    this.setState({count: this.state.count - this.state.step});
-  }
-
-  update(e) {
-    this.setState({
-      step: parseInt(e.target.value, 10) || 0
-    })
-  }
-
-  reset(e) {
-    this.setState({count: 0});
-  }
-
-  render() {
-    const { count, step } = this.state
-    return (
-      <div className="counter">
-        <div className="category">
-          <h1>Presence</h1>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-             
-          </div>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-            
-          </div>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-            
-          </div>
-        </div>
-        <div className="category">
-          <h1>Insight</h1>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-             
-          </div>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-            
-          </div>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-            
-          </div>
-        </div>
-        <div className="category">
-          <h1>Efficiency</h1>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-             
-          </div>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-            
-          </div>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-          </div>
-        </div>
-        <div className="category">
-          <h1>Creativity</h1>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-             
-          </div>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-            
-          </div>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-            
-          </div>
-        </div>
-        <div className="category">
-          <h1>Quality</h1>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-             
-          </div>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-            
-          </div>
-          <div className="member">
-            <Result result={count} />
-            
-            <Button onClick={() => this.decrement()}>-</Button>        
-            <Button onClick={() => this.increment()}>+</Button>
-            
-          </div>
-        </div>
-      </div>
+return (
+    <MuiThemeProvider theme={props.theme}>
+        <AppBar position="sticky" color="primary">
+            <Toolbar>
+                <Typography variant="h6" color="inherit">
+                    Distribution
+                </Typography>
+            </Toolbar>
+        </AppBar>
+        <Card className="category">
+            <CardContent>
+                <Typography className='categoryTitle' gutterBottom>
+                    Presence
+                </Typography>
+                <Typography className='categorySubtitle'>
+                    How often is each teammate present during the meetings? How engaged are they during the meetings?
+                </Typography>
+                <SliderContainer/>
+            </CardContent>
+        </Card>
+        <Card className="category">
+            <CardContent>
+                <Typography className='categoryTitle' gutterBottom>
+                    Insight
+                </Typography>
+                <Typography className='categorySubtitle'>
+                    How much does each teammate understand the project and the ideas of others? How well do they offer suggestions?
+                </Typography>
+                <SliderContainer/>
+            </CardContent>
+        </Card>
+        <Card className="category">
+            <CardContent>
+                <Typography className='categoryTitle' gutterBottom>
+                    Efficiency
+                </Typography>
+                <Typography className='categorySubtitle'>
+                    How much time does each teammate commit to the project? How much do they get done in that time?
+                </Typography>
+                <SliderContainer/>
+            </CardContent>
+        </Card>
+        <Card className="category">
+            <CardContent>
+                <Typography className='categoryTitle' gutterBottom>
+                    Creativity
+                </Typography>
+                <Typography className='categorySubtitle'>
+                    To what extent does each teammate offer new ideas? How often do they propose new approaches to the same problems?
+                </Typography>
+                <SliderContainer/>
+            </CardContent>
+        </Card>
+    </MuiThemeProvider>
    );    
-  }
 }
-
-// Properties
-Distribution.propTypes = {
-  initialCount: PropTypes.number
-};
-Distribution.defaultProps = {
-  initialStep: 5,
-  initialCount: 0
-};
-
-const Result = ({result}) => (
-  <div className="result">{result}</div>
-);
-
-const Reset = ({reset}) => (
-  <div className="reset" onClick={reset}>x</div>
-);
-
-const Button = ({onClick, children}) => (
-  <button onClick={onClick}> {children} </button>
-);
-
-const InputBox = ({value, update}) => (
-  <div>
-    <input type="number" value={value} onChange={update} />
-  </div> 
-);
-
-export default Distribution;

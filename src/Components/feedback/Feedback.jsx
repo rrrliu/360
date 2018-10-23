@@ -97,7 +97,7 @@ export default class Feedback extends Component {
                         </label>
                         </div>
                     </div>
-                    </div>
+                </div>
             </div>
         )
     }
