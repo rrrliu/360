@@ -18,7 +18,7 @@ export default function Dashboard(props) {
 
     let weekList = Object.keys(props.weekList).map(function(key) {
         if (!(props.weekList[key]['current'])) {
-            return <NavLink to="/record" className="weekLink">
+            return <NavLink to="/record" className="weekLink" onClick={() => App.routes[5]['props']['week'] = props.weekList[key]['string']}>
                 <ListItem button>
                     <ListItemText primary={props.weekList[key]['string']}/>
                 </ListItem>

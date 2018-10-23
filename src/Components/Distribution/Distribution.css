@@ -2,62 +2,87 @@ body {
     padding-top: 50px;
     background-color: #eee;
     text-align: center;
-    font-family: 'Open Sans', sans-serif;  
-  }
-  .result {
+    font-family: 'Open Sans', sans-serif;
+}
+
+.result {
     font-size: 30px;
-  }
-  .reset {
+}
+
+.reset {
     font-style: italic;
     letter-spacing: 2px;
     cursor: pointer;
-  }
-  .reset:hover {
+}
+
+.reset:hover {
     text-decoration: underline;
-  }
-  button,
-  input {
-    padding: 7.5px;  
+}
+
+button,
+input {
+    padding: 7.5px;
     font-size: 16px;
     color: #000;
     text-align: center;
     border: 0;
     border-radius: 2px;
-    background:#eee;
-  }
-  button:focus,
-  input:focus {
-    outline:0;
-  }
-  button {
-      min-width: 10px;
-      cursor: pointer;
-  }
-  button + button {  
+    background: #eee;
+}
+
+button:focus,
+input:focus {
+    outline: 0;
+}
+
+button {
+    min-width: 10px;
+    cursor: pointer;
+}
+
+button + button {
     margin-left: 5px;
-  }
-  button:hover,
-  input:hover{
-      background: #fff;
-  }
-  a {
+}
+
+button:hover,
+input:hover {
+    background: #fff;
+}
+
+a {
     color: #000;
-  }
-  
-  .counter {
+}
+
+.counter {
     color: #000;
-  }
-  .member {
-    display: inline-block;
-    margin-left: 20px;
-  }
-  .category {
-    margin-bottom: 50px;
-  }
-  .category h1 {
-    text-transform: lowercase;
-    font-style: italic;
-    font-size: 30px;
-    font-weight: normal;
-    letter-spacing: 2px;
-  }
+}
+
+.category {
+    margin: 2% auto;
+    width: 40%;
+    text-align: left;
+}
+
+.categoryTitle {
+    font-size: 18px !important;
+    color: rgba(0, 0, 0, 0.78) !important;
+}
+
+.categorySubtitle {
+    font-size: 14px !important;
+    color: rgba(0, 0, 0, 0.54) !important;
+}
+
+.result{
+    text-align: center;
+}
+
+.distButton {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.sliderContainer{
+    display: flex;
+    justify-content: space-around;
+}

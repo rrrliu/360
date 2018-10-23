@@ -12,15 +12,47 @@ import {createMuiTheme} from "@material-ui/core";
 import amber from "@material-ui/core/colors/amber";
 import API from './API.js'
 
-const weeks = {
-    week1: {string: "Week 1", current: false},
-    week2: {string: "Week 2", current: false},
-    week3: {string: "Week 3", current: false},
-    week4: {string: "Week 4", current: false},
-    week5: {string: "Week 5", current: false},
-    week6: {string: "Week 6", current: false},
-    week7: {string: "Week 7", current: false},
-    week8: {string: "Week 8", current: true}
+const feedbacks = {
+    week1: {string: "Week 1", current: false, weekFeedbacks: {
+            feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+            },
+    week2: {string: "Week 2", current: false, weekFeedbacks: {
+            feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+            },
+    week3: {string: "Week 3", current: false, weekFeedbacks: {
+            feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+        },
+    week4: {string: "Week 4", current: false, weekFeedbacks: {
+            feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+            },
+    week5: {string: "Week 5", current: false,weekFeedbacks: {
+            feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+            },
+    week6: {string: "Week 6", current: false, weekFeedbacks: {
+            feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+            },
+    week7: {string: "Week 7", current: false,weekFeedbacks: {
+            feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+            },
+    week8: {string: "Week 8", current: true, weekFeedbacks: {
+            feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+            feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+            },
 };
 
 const appTheme = createMuiTheme({
@@ -35,7 +67,7 @@ let routes = [
         component: Dashboard,
         props:
             {
-                weekList: weeks,
+                weekList: feedbacks,
                 theme:
                 appTheme
             }
@@ -82,7 +114,9 @@ let routes = [
         Record,
         props:
             {
-                theme: appTheme
+                theme: appTheme,
+                feedbackList: feedbacks,
+                week: feedbacks['week1']['string']
             }
     }
 ];
