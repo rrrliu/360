@@ -12,7 +12,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
 
-const names= ["harish", "isabelle", "andrew"];
+const names= ["Harish", "Isabelle", "Andrew"];
 
 export default class SemanticSurvey extends Component {
     state = {
@@ -122,7 +122,7 @@ export default class SemanticSurvey extends Component {
                         </Typography>
                     </Toolbar>
                 </AppBar>
-                <Typography align='center' variant='title' className='pageInstructions'>Assign up to 5 adjectives to each of your teammates.</Typography>
+                <Typography align='center' variant='title' className='pageInstructions'>More loot! Hand up to 5 golden coins to each of your crew members.</Typography>
                 <div className="container-drag">
                     <div className="wip"
                          onDragOver={(e)=>this.onDragOver(e)}
@@ -170,7 +170,7 @@ export default class SemanticSurvey extends Component {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Typography align='center' variant='title' className='pageInstructions'>Assign up to 5 adjectives to each of your teammates.</Typography>
+            <Typography align='center' variant='title' className='pageInstructions'>More loot! Hand up to 5 golden coins to each of your crew members.</Typography>
             <div className="container-drag">
                 <div className="wip"
                      onDragOver={(e)=>this.onDragOver(e)}

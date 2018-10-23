@@ -3,10 +3,6 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import './Confirmation.css';
 import { Typography } from '@material-ui/core';
-import { NavLink } from 'react-router-dom';
-import NavButton from "../NavButton/NavButton";
-import config from '../../firebase/firebase';
-import firebase from '../../firebase/firebase';
 
 export default class Confirmation extends Component {
     render() {
