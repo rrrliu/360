@@ -3,6 +3,7 @@ import { NavLink } from 'react-router-dom';
 import Adjective from './Adjective.jsx';
 import './SemanticSurvey.css';
 import firebase from '../../firebase.js';
+import NextButton from '../NextButton/NextButton'
 
 const names= ["harish", "isabelle", "andrew"];
 
@@ -181,7 +182,7 @@ export default class SemanticSurvey extends Component {
                     </div>
 
             </div>
-            <NavLink to="/give" className= "next-button" onClick= {this.addData.bind(this)}> Next </NavLink>
+            <NavLink to="/give" className= "nextNav" onClick= {this.addData.bind(this)}><NextButton/></NavLink>
             </div>
         </div>
     )};
