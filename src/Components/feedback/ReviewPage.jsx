@@ -26,7 +26,7 @@ export default class ReviewPage extends Component{
                     <Card className='feedbackReviewContainer'>
                         <CardContent>
                             <TextField multiline variant='outlined' disabled
-                                       value="REDACTED is the dumbest teammate I've ever had, please move me."
+                                       value="[REDACTED] is the worst teammate I've ever had, please move me."
                                        margin='normal' className='feedbackReview'/>
                             <div className="demo">
                                 <div className="ratingControl">

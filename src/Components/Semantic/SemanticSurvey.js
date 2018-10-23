@@ -133,21 +133,21 @@ export default class SemanticSurvey extends Component {
                     {/* {this.createChests(tasks)} */}
                         <div className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
-                             onDrop={(e)=>this.onDrop(e, "harish")}>
+                             onDrop={(e)=>this.onDrop(e, "Harish")}>
                             <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
-                            {tasks.harish}
+                            {tasks.Harish}
                         </div>
                         <div className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
-                             onDrop={(e)=>this.onDrop(e, "isabelle")}>
+                             onDrop={(e)=>this.onDrop(e, "Isabelle")}>
                             <Typography className='chestTitle' gutterBottom>{names[1]}</Typography>
-                            {tasks.isabelle}
+                            {tasks.Isabelle}
                         </div>
                         <div className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
-                             onDrop={(e)=>this.onDrop(e, "andrew")}>
+                             onDrop={(e)=>this.onDrop(e, "Andrew")}>
                             <Typography className='chestTitle' gutterBottom>{names[2]}</Typography>
-                            {tasks.andrew}
+                            {tasks.Andrew}
                         </div>
                         <div className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
@@ -181,21 +181,21 @@ export default class SemanticSurvey extends Component {
                 {/* {this.createChests(tasks)} */}
                     <div className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
-                         onDrop={(e)=>this.onDrop(e, "harish")}>
+                         onDrop={(e)=>this.onDrop(e, "Harish")}>
                         <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
-                        {tasks.harish}
+                        {tasks.Harish}
                     </div>
                     <div className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
-                         onDrop={(e)=>this.onDrop(e, "isabelle")}>
+                         onDrop={(e)=>this.onDrop(e, "Isabelle")}>
                         <Typography className='chestTitle' gutterBottom>{names[1]}</Typography>
-                        {tasks.isabelle}
+                        {tasks.Isabelle}
                     </div>
                     <div className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
-                         onDrop={(e)=>this.onDrop(e, "andrew")}>
+                         onDrop={(e)=>this.onDrop(e, "Andrew")}>
                         <Typography className='chestTitle' gutterBottom>{names[2]}</Typography>
-                        {tasks.andrew} 
+                        {tasks.Andrew} 
                     </div>
                 </div>
             </div>
