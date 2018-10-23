@@ -74,4 +74,12 @@ html, body{
 
 #embark-button {
     color: #ffffff;
+    font-size: 24px;
+}
+
+.first-header {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

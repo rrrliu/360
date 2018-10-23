@@ -94,6 +94,7 @@ class NewDashboard extends React.Component {
     return (
         <body background="map.jpg">
                 <Button id="signout-button">Sign Out</Button>
+                <div className= "first-header">
                 <h1 className='headerText'> { login() }
                     Hi, <strong id="name"></strong>!</h1>
 
@@ -134,6 +135,7 @@ class NewDashboard extends React.Component {
               </Grow>
             )}
           </Popper>
+          </div>
         </div>
       </div>
         </body>
