@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import GivePage from './Components/feedback/GivePage';
 import ReviewPage from './Components/feedback/ReviewPage';
 import Distribution from './Components/Distribution/Distribution';
+import NewDashboard from './Components/NewDashboard/NewDashboard';
 import PropTypes from 'prop-types';
 import './App.css';
 import Dashboard from './Components/Dashboard/Dashboard'
@@ -10,7 +11,7 @@ import SemanticSurvey from './Components/Semantic/SemanticSurvey'
 import Record from './Components/Record/Record'
 import {createMuiTheme} from "@material-ui/core";
 import amber from "@material-ui/core/colors/amber";
-import API from './API.js'
+import API from './API.js';
 
 const feedbacks = {
     week1: {string: "Week 8", current: true, weekFeedbacks: {
@@ -57,7 +58,9 @@ const feedbacks = {
 
 const appTheme = createMuiTheme({
     palette: {
-        primary: amber
+        primary: {
+            main: 'rgba(0, 0, 0, 0.25)'
+        }
     }
 });
 
@@ -127,6 +130,7 @@ class App extends Component {
                         {routes.map(({path, component: C, props}) => (
                           <Route exact path={path} render={() => <C {...props}/>}/>
                         ))}
+                        <Route exact path="/test" component={NewDashboard}/>
                     </Switch>
                 </Router>
             </div>
