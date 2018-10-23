@@ -12,7 +12,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
 
-const names= ["Harish", "Isabelle", "Andrew"];
+const names= ["Harish", "Isabelle", "Andrew", "Richard"];
 
 export default class SemanticSurvey extends Component {
     state = {
@@ -115,46 +115,56 @@ export default class SemanticSurvey extends Component {
 
         if (names.length==4){return (
             <MuiThemeProvider theme={this.props.theme}>
-                <AppBar position="sticky" color="primary">
+                <AppBar position="sticky" color="secondary">
                     <Toolbar>
                         <Typography variant="h6" color="inherit" className="dashTitle">
                             Semantic Evaluation
                         </Typography>
                     </Toolbar>
                 </AppBar>
-                <Typography align='center' variant='title' className='pageInstructions'>More loot! Hand up to 5 golden coins to each of your crew members.</Typography>
+                <div className='pageInstructions'>
+                <Typography align='center' variant='title' >More loot! Hand up to 5 golden coins to each of your crew members.</Typography>
+                </div>
                 <div className="container-drag">
-                    <div className="wip"
+                    <Card className="wip"
                          onDragOver={(e)=>this.onDragOver(e)}
                          onDrop={(e)=>{this.onDrop(e, "wip")}}>
                         {tasks.wip}
-                    </div>
+                    </Card>
                     <div className= "chest-containers">
                     {/* {this.createChests(tasks)} */}
-                        <div className="four-container"
+                        <Card className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
                              onDrop={(e)=>this.onDrop(e, "Harish")}>
-                            <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
-                            {tasks.Harish}
-                        </div>
-                        <div className="four-container"
+                            <CardContent>
+                                <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
+                                {tasks.Harish}
+                            </CardContent>
+                        </Card>
+                        <Card className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
                              onDrop={(e)=>this.onDrop(e, "Isabelle")}>
-                            <Typography className='chestTitle' gutterBottom>{names[1]}</Typography>
-                            {tasks.Isabelle}
-                        </div>
-                        <div className="four-container"
+                            <CardContent>
+                                <Typography className='chestTitle' gutterBottom>{names[1]}</Typography>
+                                {tasks.Isabelle}
+                            </CardContent>
+                        </Card>
+                        <Card className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
                              onDrop={(e)=>this.onDrop(e, "Andrew")}>
-                            <Typography className='chestTitle' gutterBottom>{names[2]}</Typography>
-                            {tasks.Andrew}
-                        </div>
-                        <div className="four-container"
+                            <CardContent>
+                                <Typography className='chestTitle' gutterBottom>{names[2]}</Typography>
+                                {tasks.Andrew}
+                            </CardContent>
+                        </Card>
+                        <Card className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
-                             onDrop={(e)=>this.onDrop(e, "richard")}>
-                            <Typography className='chestTitle' gutterBottom>{names[3]}</Typography>
-                            {tasks.richard}
-                        </div>
+                             onDrop={(e)=>this.onDrop(e, "Richard")}>
+                            <CardContent>
+                                <Typography className='chestTitle' gutterBottom>{names[3]}</Typography>
+                                {tasks.Richard}
+                            </CardContent>
+                        </Card>
                     </div>
                 </div>
                 <NavLink to="/distribution" className="backNav" onClick= {this.addData.bind(this)}><NavButton nav='< Back'/></NavLink>
@@ -163,7 +173,7 @@ export default class SemanticSurvey extends Component {
         )};
         if (names.length==3){ return (
         <MuiThemeProvider theme={this.props.theme}>
-            <AppBar position="sticky" color="primary">
+            <AppBar position="sticky" color="secondary">
                 <Toolbar>
                     <Typography variant="h6" color="inherit" className="dashTitle headerText">
                         Semantic Evaluation
@@ -179,24 +189,30 @@ export default class SemanticSurvey extends Component {
                 </div>
                 <div className= "chest-containers">
                 {/* {this.createChests(tasks)} */}
-                    <div className="three-container"
+                    <Card className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
                          onDrop={(e)=>this.onDrop(e, "Harish")}>
-                        <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
-                        {tasks.Harish}
-                    </div>
-                    <div className="three-container"
+                        <CardContent>
+                            <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
+                            {tasks.Harish}
+                        </CardContent>
+                    </Card>
+                    <Card className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
                          onDrop={(e)=>this.onDrop(e, "Isabelle")}>
-                        <Typography className='chestTitle' gutterBottom>{names[1]}</Typography>
-                        {tasks.Isabelle}
-                    </div>
-                    <div className="three-container"
+                        <CardContent>
+                            <Typography className='chestTitle' gutterBottom>{names[1]}</Typography>
+                            {tasks.Isabelle}
+                        </CardContent>
+                    </Card>
+                    <Card className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
                          onDrop={(e)=>this.onDrop(e, "Andrew")}>
-                        <Typography className='chestTitle' gutterBottom>{names[2]}</Typography>
-                        {tasks.Andrew} 
-                    </div>
+                        <CardContent>
+                            <Typography className='chestTitle' gutterBottom>{names[2]}</Typography>
+                            {tasks.Andrew}
+                        </CardContent>
+                    </Card>
                 </div>
             </div>
             <NavLink to="/distribution" className="backNav" onClick= {this.addData.bind(this)}><NavButton nav='< Back'/></NavLink>

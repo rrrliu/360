@@ -1,9 +1,11 @@
 .container-drag {
+    display: inline-block;
+    margin: 0 auto;
     text-align:center;
 }
 
 .wip {
-    width: 100%;
+    padding: 0 20px;
     height: 25%;
     border-right: 1px dotted;
 }
@@ -32,6 +34,8 @@
 
 .chest-containers {
     position: absolute;
+    display: flex;
+    justify-content: space-around;
     width: 100%;
     right: 0;
     bottom: 0;
@@ -39,19 +43,19 @@
 }
 
 .four-container{
+    margin-bottom: 1%;
     float: left;
     position: relative;
     height: 350px;
-    width: 25%;
-    border-right: 1px solid rgba(0, 0, 0, 0.32);
+    width: 23%;
 }
 
 .three-container{
+    margin-bottom: 1%;
     float: left;
     position: relative;
     height: 350px;
-    width: 33.33%;
-    border-left: 1px solid rgba(0, 0, 0, 0.32);
+    width: 32%;
 }
 
 .dashTitle {

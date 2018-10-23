@@ -10,6 +10,7 @@ import Dashboard from './Components/Dashboard/Dashboard'
 import SemanticSurvey from './Components/Semantic/SemanticSurvey'
 import Record from './Components/Record/Record'
 import {createMuiTheme} from "@material-ui/core";
+import grey from "@material-ui/core/colors/grey";
 import amber from "@material-ui/core/colors/amber";
 import API from './API.js'
 import Confirmation from './Components/confirmation/Confirmation';
@@ -60,7 +61,10 @@ const feedbacks = {
 const appTheme = createMuiTheme({
     palette: {
         primary: {
-            main: 'rgba(0, 0, 0, 0.25)'
+            main: amber[700]
+        },
+        secondary: {
+            main: grey[800]
         }
     }
 });
@@ -141,7 +145,7 @@ class App extends Component {
                         {routes.map(({path, component: C, props}) => (
                           <Route exact path={path} render={() => <C {...props}/>}/>
                         ))}
-                        <Route exact path="/test" component={NewDashboard}/>
+                        {/*<Route exact path="/test" component={NewDashboard}/>*/}
                     </Switch>
                 </Router>
             </div>

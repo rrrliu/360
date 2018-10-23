@@ -14,14 +14,16 @@ export default class ReviewPage extends Component{
     render() {
         return (
             <MuiThemeProvider theme={this.props.theme}>
-                <AppBar position="sticky" color="primary">
+                <AppBar position="sticky" color="secondary">
                     <Toolbar>
                         <Typography variant="h6" color="inherit" className='headerText'>
                             Feedback Review
                         </Typography>
                     </Toolbar>
                 </AppBar>
-                <Typography align='center' variant='title' className='pageInstructions'>Please rate the following feedback:</Typography>
+                <div className='pageInstructions'>
+                    <Typography align='center' variant='title'>Please rate the following feedback:</Typography>
+                </div>
                 <div className='reviewContainer'>
                     <Card className='feedbackReviewContainer'>
                         <CardContent>
