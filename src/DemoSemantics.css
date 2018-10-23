@@ -25,7 +25,7 @@
     width: 150px;
     height: 100vh;
     right: 0;
-    top: 10px;
+    top: 10;
     background-color: #9E9E9E;
     border-left: 1px dotted;
 }
@@ -51,20 +51,29 @@
     left: 0;
 }
 
-.four-container{
+.harish-container{
     float: left;
     position: relative;
-    height: 350px;
-    width: 25%;
+    height: 300px;
+    width: 33%;
     background-color: #9E9E9E;
     border-left: 1px dotted;
 }
 
-.three-container{
+.isabelle-container{
     float: left;
     position: relative;
-    height: 350px;
-    width: 33.33%;
+    height: 300px;
+    width: 33%;
+    background-color: #9E9E9E;
+    border-left: 1px dotted;
+}
+
+.andrew-container{
+    float: left;
+    position: relative;
+    height: 300px;
+    width: 33%;
     background-color: #9E9E9E;
     border-left: 1px dotted;
 }

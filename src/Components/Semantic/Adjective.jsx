@@ -1,22 +1,15 @@
 import React, { Component } from 'react';
+import coin from './coin.png';
 import './Adjective.css';
 
 class Adjective extends Component {
   render() {
+    const {label} = this.props;
     return (
-      <div className="login-page">
-        <div className="welcome">
-          <h2>Welcome!</h2>
-          <h3>Get started here.</h3>
-          <form>
-            <input type="text" placeholder="Email" className="login-box" />
-            <input
-              type="password"
-              placeholder="Password"
-              className="login-box"
-            />
-          </form>
-        </div>
+      <div onDragStart={this.props.onDragStart} className="draggable">
+        <img src= {coin}/>
+        {label}
+
       </div>
     );
   }
