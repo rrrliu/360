@@ -3,6 +3,7 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import GivePage from './Components/feedback/GivePage';
 import ReviewPage from './Components/feedback/ReviewPage';
 import Distribution from './Components/Distribution/Distribution';
+import NewDashboard from './Components/NewDashboard/NewDashboard';
 import PropTypes from 'prop-types';
 import './App.css';
 import Dashboard from './Components/Dashboard/Dashboard'
@@ -11,6 +12,7 @@ import Record from './Components/Record/Record'
 import {createMuiTheme} from "@material-ui/core";
 import amber from "@material-ui/core/colors/amber";
 import API from './API.js'
+import Confirmation from './Components/confirmation/Confirmation';
 
 const feedbacks = {
     week1: {string: "Week 8", current: true, weekFeedbacks: {
@@ -57,7 +59,9 @@ const feedbacks = {
 
 const appTheme = createMuiTheme({
     palette: {
-        primary: amber
+        primary: {
+            main: 'rgba(0, 0, 0, 0.25)'
+        }
     }
 });
 
@@ -114,6 +118,16 @@ let routes = [
                 week: feedbacks['week1']['string']
             }
     },
+    {
+        path: '/confirm',
+        component: Confirmation,
+        props:
+            {
+                theme: appTheme,
+                feedbackList: feedbacks,
+                week: feedbacks['week1']['string']
+            }
+    },
 ];
 
 class App extends Component {
@@ -127,6 +141,7 @@ class App extends Component {
                         {routes.map(({path, component: C, props}) => (
                           <Route exact path={path} render={() => <C {...props}/>}/>
                         ))}
+                        <Route exact path="/test" component={NewDashboard}/>
                     </Switch>
                 </Router>
             </div>
