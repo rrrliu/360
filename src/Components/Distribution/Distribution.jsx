@@ -38,7 +38,7 @@ export default class Distribution extends Component {
                     </Toolbar>
                 </AppBar>
                 <div className='pageInstructions'>
-                    <Typography align='center' variant='title'>Ahoy! There are 120 pieces of eight for each of the following categories. Distribute them amongst your crew as you see fit.</Typography>
+                    <Typography align='center' variant='title'>Ahoy! There are 120 pieces of gold for each of the following categories. Distribute them amongst your crew as you see fit.</Typography>
                 </div>
                 <Card className="category">
                     <CardContent>
