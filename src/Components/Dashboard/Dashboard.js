@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
-import Divider from '@material-ui/core/Divider';
+import Button from '@material-ui/core/Button'
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
@@ -11,7 +11,7 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import amber from '@material-ui/core/colors/amber'
 import './Dashboard.css'
 import config from '../../firebase/firebase';
-import firebase from 'firebase';
+import firebase from '../../firebase/firebase';
 import App from '../../App';
 
 function login() {
@@ -61,9 +61,8 @@ export default function Dashboard(props) {
                         { login() }
                         Hi, <strong id="name"></strong>!
                     </Typography>
-                    <input type="button" value="Sign Out" id="signout-button" />
+                    <Button id="signout-button">Sign Out</Button>
                 </Toolbar>
-                
             </AppBar>
             <List>
                 {weekList}

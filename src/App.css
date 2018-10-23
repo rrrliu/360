@@ -69,5 +69,27 @@ a {
   color: #545151;
 }
 
+.nextNav {
+    position: fixed;
+    bottom: 4%;
+    right: 2%;
+}
+.nextNav:hover {
+    text-decoration: none;
+}
+
+.backNav {
+    position: fixed;
+    bottom: 4%;
+    left: 2%;
+}
+.backNav:hover {
+    text-decoration: none;
+}
+
+.pageInstructions {
+    margin: 3% auto 2% auto !important;
+}
+
 @import url(https://fonts.googleapis.com/css?family=Francois+One);
 @import url(https://fonts.googleapis.com/css?family=PT+Sans);

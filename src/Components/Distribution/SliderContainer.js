@@ -1,20 +1,19 @@
 import React, { Component } from 'react'
 import Slider from './Slider'
 
-
 export default class SliderContainer extends Component{
 
     constructor(props){
         super(props);
         this.updateVal = this.updateVal.bind(this);
         let counts = [];
-        for(var i=0; i<3; i++){
+        for(var i=0; i<this.props.teammates.length; i++){
             counts.push(0);
         };
         this.state = {
             counts: counts,
-            step: 2,
-            cap: 60
+            step: 5,
+            cap: 120
         }
     }
     overflow = 0;
@@ -38,7 +37,7 @@ export default class SliderContainer extends Component{
         this.setState({counts: newCounts})
     }
     render(){
-        let sliders = this.state.counts.map((item, index) => (<Slider updateVal={this.updateVal} index={index} count={item} step={this.state.step}/>));
+        let sliders = this.state.counts.map((item, index) => (<Slider updateVal={this.updateVal} index={index} teammate={this.props.teammates[index]} count={item} step={this.state.step}/>));
 
         return (
             <div className="sliderContainer">
