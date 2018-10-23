@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { withStyles } from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemText from '@material-ui/core/ListItemText';
@@ -11,56 +10,42 @@ import { NavLink } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import amber from '@material-ui/core/colors/amber'
 import './Dashboard.css'
+import { NavLink } from 'react-router-dom'
+import App from '../../App'
 
-const theme = createMuiTheme({
-    palette: {
-        primary: amber
-    }
-});
 
-const weeks = {
-    week1: {string: "Week 1", current: false},
-    week2: {string: "Week 2", current: false},
-    week3: {string: "Week 3", current: false},
-    week4: {string: "Week 4", current: false},
-    week5: {string: "Week 5", current: false},
-    week6: {string: "Week 6", current: false},
-    week7: {string: "Week 7", current: false},
-    week8: {string: "Week 8", current: true}
-};
 
-class Dashboard extends Component {
-    render(){
-        let weekList = Object.keys(weeks).map(function(key) {
-            if (!(weeks[key]['current'])) {
-                return <ListItem button>
-                    <ListItemText primary={weeks[key]['string']}/>
-                </ListItem>
+export default function Dashboard(props) {
 
-            }
-            else {
-                return <NavLink to="/distribution" className= "current-button">
+    let weekList = Object.keys(props.weekList).map(function(key) {
+        if (!(props.weekList[key]['current'])) {
+            return <NavLink to="/record" className="weekLink" onClick={() => App.routes[5]['props']['week'] = props.weekList[key]['string']}>
                 <ListItem button>
-                    <ListItemText primary={weeks[key]['string']}/>
+                    <ListItemText primary={props.weekList[key]['string']}/>
                 </ListItem>
-                </NavLink>
-            }
-        });
-        return (
-            <MuiThemeProvider theme={theme}>
-                <AppBar position="sticky" color="primary">
-                    <Toolbar>
-                        <Typography variant="h6" color="inherit">
-                            Dashboard
-                        </Typography>
-                    </Toolbar>
-                </AppBar>
-                <List>
-                    {weekList}
-                </List>
-            </MuiThemeProvider>
-        );
-    }
-}
+            </NavLink>
+        }
+        else {
+            return <NavLink to="/distribution" className="weekLink">
+                <ListItem button>
+                    <ListItemText primary={props.weekList[key]['string']}/>
+                </ListItem>
+            </NavLink>
+        }
+    });
 
-export default Dashboard
+    return (
+        <MuiThemeProvider theme={props.theme}>
+            <AppBar position="sticky" color="primary">
+                <Toolbar>
+                    <Typography variant="h6" color="inherit">
+                        Dashboard
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+            <List>
+                {weekList}
+            </List>
+        </MuiThemeProvider>
+    );
+}

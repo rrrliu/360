@@ -1,13 +1,25 @@
 import React, { Component } from 'react';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import TextField from '@material-ui/core/TextField';
+import './GivePage.css'
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
 
 export default class Feedback extends Component {
     render() {
         return (
             <div>
-                <p>Rate the following feedback:</p>
-                <textarea disabled>
-                    {this.props.text}
-                </textarea>
+                <Card className='feedbackReviewContainer'>
+                    <CardContent>
+                        <Typography className='feedbackReviewTitle' gutterBottom>
+                            Please rate the following feedback
+                        </Typography>
+                        <TextField multiline variant='outlined' disabled value={this.props.text} margin='normal' className='feedbackReview'/>
+                    </CardContent>
+                </Card>
                 <div className="">
                     <div className="demo">
                         <div className="ratingControl">
@@ -85,7 +97,7 @@ export default class Feedback extends Component {
                         </label>
                         </div>
                     </div>
-                    </div>
+                </div>
             </div>
         )
     }

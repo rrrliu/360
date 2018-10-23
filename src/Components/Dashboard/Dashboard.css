@@ -8,6 +8,7 @@
     font-size: calc(10px + 2vmin);
     color: black;
 }
-.current-button{
-    text-decoration:none;
+
+.weekLink:hover {
+    text-decoration: none;
 }
