@@ -225,7 +225,5 @@ export default class SemanticSurvey extends Component {
         db.collection("test").add(
             tasks
         );
-        
-        
     }
 }

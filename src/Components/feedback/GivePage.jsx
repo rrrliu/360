@@ -10,7 +10,20 @@ import CardContent from '@material-ui/core/CardContent';
 import {NavLink} from "react-router-dom";
 import NavButton from "../NavButton/NavButton";
 
+const teammates = ['harish', 'isabelle', 'andrew', 'richard'];
+
 export default class GivePage extends Component{
+    qualList = teammates.map((name) => {
+        return <Card className='feedbackTextContainer'>
+            <CardContent>
+                <Typography className='feedbackTextTitle' gutterBottom>
+                    Feedback for {name}
+                </Typography>
+                <TextField multiline variant='outlined' label='Message' margin='normal'
+                           className='feedbackText'/>
+            </CardContent>
+        </Card>
+    });
     render() {
         return (
             <MuiThemeProvider theme={this.props.theme}>
@@ -23,33 +36,7 @@ export default class GivePage extends Component{
                 </AppBar>
                 <Typography align='center' variant='title' className='pageInstructions'>Write out some comments for your teammates with regard to what they do well, and how they could improve. Be specific (this will get graded)!</Typography>
                 <form className='giveFeedback'>
-                    <Card className='feedbackTextContainer'>
-                        <CardContent>
-                            <Typography className='feedbackTextTitle' gutterBottom>
-                                Feedback for Isabelle
-                            </Typography>
-                            <TextField multiline variant='outlined' label='Message' margin='normal'
-                                       className='feedbackText'/>
-                        </CardContent>
-                    </Card>
-                    <Card className='feedbackTextContainer'>
-                        <CardContent>
-                            <Typography className='feedbackTextTitle' gutterBottom>
-                                Feedback for Harish
-                            </Typography>
-                            <TextField multiline variant='outlined' label='Message' margin='normal'
-                                       className='feedbackText'/>
-                        </CardContent>
-                    </Card>
-                    <Card className='feedbackTextContainer'>
-                        <CardContent>
-                            <Typography className='feedbackTextTitle' gutterBottom>
-                                Feedback for Andrew
-                            </Typography>
-                            <TextField multiline variant='outlined' label='Message' margin='normal'
-                                       className='feedbackText'/>
-                        </CardContent>
-                    </Card>
+                    {this.qualList}
                 </form>
                 <NavLink to="/semantics" className="backNav" /*onClick={this.addData.bind(this)}*/><NavButton
                     nav='< Back'/></NavLink>
