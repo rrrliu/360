@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import Adjective from './Adjective.jsx';
 import './SemanticSurvey.css';
+import firebase from '../../firebase.js';
 
 const names= ["harish", "isabelle", "andrew"];
 
@@ -87,6 +88,7 @@ export default class SemanticSurvey extends Component {
         var tasks = {
             wip: [],
         }
+        
         for (var i=0; i<names.length; i++){
             tasks[names[i]]=[];
         }
@@ -100,12 +102,6 @@ export default class SemanticSurvey extends Component {
                 }
                 draggable
                 className="draggable"/>
-
-            // <img image= {coins[t.label]} key={t.name}
-            //         onDragStart = {(e) => this.onDragStart(e, t.label)}
-            //         draggable
-            //         className="draggable"
-            ///>
             );
         });
 
@@ -185,9 +181,33 @@ export default class SemanticSurvey extends Component {
                     </div>
 
             </div>
-            <NavLink to="/give" className= "next-button"> Next </NavLink>
+            <NavLink to="/give" className= "next-button" onClick= {this.addData.bind(this)}> Next </NavLink>
             </div>
         </div>
     )};
+    }
+
+    addData() {
+        const db = firebase.firestore();
+        db.settings({
+            timestampsInSnapshots: true
+        })
+        var tasks = {}
+        for (var i=0; i<names.length; i++){
+            tasks[names[i]]=[];
+        }
+        this.state.tasks.forEach ((t) => {
+            if(t.category != "wip") {
+                tasks[t.category].push(
+                    t.name
+                );
+            }
+        });
+        console.log(tasks)
+        db.collection("test").add(
+            tasks
+        );
+        
+        
     }
 }
