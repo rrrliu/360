@@ -11,7 +11,7 @@ import SliderContainer from './SliderContainer'
 import {NavLink} from "react-router-dom";
 import NavButton from "../NavButton/NavButton";
 
-const teammates = ['harish', 'isabelle', 'andrew', 'richard'];
+const teammates = ['Harish', 'Isabelle', 'Andrew', 'Richard'];
 
 export default class Distribution extends Component{
     render() {
@@ -19,21 +19,22 @@ export default class Distribution extends Component{
             <MuiThemeProvider theme={this.props.theme}>
                 <AppBar position="sticky" color="primary">
                     <Toolbar>
-                        <Typography variant="h6" color="inherit">
+                        <Typography variant="h6" color="inherit" className='headerText'>
                             Distribution
                         </Typography>
                     </Toolbar>
                 </AppBar>
-                <Typography align='center' variant='title' className='pageInstructions'>There are 120 total points for each of the following categories. Distribute them amongst your teammates as you see fit.</Typography>
+                <Typography align='center' variant='title' className='pageInstructions'>Ahoy! There are 120 pieces of eight for each of the following categories. Distribute them amongst your crew as you see fit.</Typography>
                 <Card className="category">
                     <CardContent>
                         <Typography className='categoryTitle' gutterBottom>
                             Presence
                         </Typography>
                         <Typography className='categorySubtitle'>
-                            How often is each teammate present during the meetings? How engaged are they during the
+                            How often is each crew member present during the meetings? How engaged are they during the
                             meetings?
                         </Typography>
+                        <p></p>
                         <SliderContainer teammates={teammates}/>
                     </CardContent>
                 </Card>
@@ -43,8 +44,9 @@ export default class Distribution extends Component{
                             Insight
                         </Typography>
                         <Typography className='categorySubtitle'>
-                            How much does each teammate understand the project and the ideas of others? How well do they
+                            How much does each crew member understand the project and the ideas of others? How well do they
                             offer suggestions?
+                        <p></p>
                         </Typography>
                         <SliderContainer teammates={teammates}/>
                     </CardContent>
@@ -55,9 +57,10 @@ export default class Distribution extends Component{
                             Efficiency
                         </Typography>
                         <Typography className='categorySubtitle'>
-                            How much time does each teammate commit to the project? How much do they get done in that
+                            How much time does each crew member commit to the project? How much do they get done in that
                             time?
                         </Typography>
+                        <p></p>
                         <SliderContainer teammates={teammates}/>
                     </CardContent>
                 </Card>
@@ -67,9 +70,10 @@ export default class Distribution extends Component{
                             Creativity
                         </Typography>
                         <Typography className='categorySubtitle'>
-                            To what extent does each teammate offer new ideas? How often do they propose new approaches
+                            To what extent does each crew member offer new ideas? How often do they propose new approaches
                             to the same problems?
                         </Typography>
+                        <p></p>
                         <SliderContainer teammates={teammates}/>
                     </CardContent>
                 </Card>

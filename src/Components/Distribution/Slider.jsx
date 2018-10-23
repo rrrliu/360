@@ -3,7 +3,7 @@ import PropTypes from 'prop-types'
 import Button from '@material-ui/core/Button'
 import firebase from '../../firebase/firebase';
 import Typography from '@material-ui/core/Typography';
-
+import './Slider.css';
 
 export default class Slider extends Component {
 
@@ -27,7 +27,7 @@ export default class Slider extends Component {
         return (
             <div className="member">
                 <Typography align='center' className='sliderName'>{this.props.teammate}</Typography>
-                <Result result={this.props.count} />
+                <Result result={this.props.count} className="result" />
                 <Button className='distButton' variant='outlined' onClick={() => this.decrement()}>-</Button>
                 <Button className='distButton' variant='outlined' onClick={() => this.increment()}>+</Button>
             </div>

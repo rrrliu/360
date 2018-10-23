@@ -86,9 +86,14 @@ a {
 .distButton {
     font-size: 18px;
     font-weight: bold;
+    margin: 0 auto !important;
 }
 
 .sliderContainer{
     display: flex;
     justify-content: space-around;
+}
+
+.category {
+    width: 60%;
 }
