@@ -10,10 +10,23 @@ import CardContent from '@material-ui/core/CardContent';
 import SliderContainer from './SliderContainer'
 import {NavLink} from "react-router-dom";
 import NavButton from "../NavButton/NavButton";
+import firebase from '../../firebase/firebase';
 
-const teammates = ['harish', 'isabelle', 'andrew', 'richard'];
+const teammates = ['harish', 'isabelle', 'andrew'];
 
-export default class Distribution extends Component{
+export default class Distribution extends Component {
+    state = {
+        counts: []
+    };
+    
+    
+    handleCounts = (countsValue) => {
+        let newCounts=this.state.counts;
+        newCounts.push(countsValue)
+        this.setState({counts: newCounts});    
+        console.log(countsValue);        
+    }
+
     render() {
         return (
             <MuiThemeProvider theme={this.props.theme}>
@@ -34,7 +47,7 @@ export default class Distribution extends Component{
                             How often is each teammate present during the meetings? How engaged are they during the
                             meetings?
                         </Typography>
-                        <SliderContainer teammates={teammates}/>
+                        <SliderContainer teammates={teammates} onRetrieveData={this.handleCounts.bind(this)} />
                     </CardContent>
                 </Card>
                 <Card className="category">
@@ -46,7 +59,7 @@ export default class Distribution extends Component{
                             How much does each teammate understand the project and the ideas of others? How well do they
                             offer suggestions?
                         </Typography>
-                        <SliderContainer teammates={teammates}/>
+                        <SliderContainer teammates={teammates} onRetrieveData={this.handleCounts.bind(this)} />
                     </CardContent>
                 </Card>
                 <Card className="category">
@@ -58,7 +71,7 @@ export default class Distribution extends Component{
                             How much time does each teammate commit to the project? How much do they get done in that
                             time?
                         </Typography>
-                        <SliderContainer teammates={teammates}/>
+                        <SliderContainer teammates={teammates} onRetrieveData={this.handleCounts.bind(this)} />
                     </CardContent>
                 </Card>
                 <Card className="category">
@@ -70,14 +83,34 @@ export default class Distribution extends Component{
                             To what extent does each teammate offer new ideas? How often do they propose new approaches
                             to the same problems?
                         </Typography>
-                        <SliderContainer teammates={teammates}/>
+                        <SliderContainer teammates={teammates} onRetrieveData={this.handleCounts.bind(this)} />
                     </CardContent>
                 </Card>
-                <NavLink to="/" className="backNav" /*onClick={this.addData.bind(this)}*/><NavButton
+                <NavLink to="/" className="backNav" onClick={this.addData.bind(this)}><NavButton
                     nav='< Exit'/></NavLink>
-                <NavLink to="/semantics" className="nextNav" /*onClick={this.addData.bind(this)}*/><NavButton
+                <NavLink to="/semantics" className="nextNav" onClick={this.addData.bind(this)}><NavButton
                     nav='Next >'/></NavLink>
             </MuiThemeProvider>
         );
+    }
+
+    addData() {
+        const db = firebase.firestore();
+        db.settings({
+            timestampsInSnapshots: true
+        })
+        console.log(this.state.counts)
+        for (var i=0; i<teammates.length; i++){
+            let mate={};
+            mate[teammates[i]]=[];
+            for (var j=0; j<this.state.counts.length; j++){
+                mate[teammates[i]].push(this.state.counts[j][i]);
+            }
+            db.collection("distr").add({
+                mate    
+            });     
+            
+        }
+        
     }
 }

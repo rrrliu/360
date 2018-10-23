@@ -17,14 +17,14 @@ const names= ["harish", "isabelle", "andrew"];
 export default class SemanticSurvey extends Component {
     state = {
         tasks: [
-            {name:"diligent",category:"wip", label: 0},
+            {name:"diligent", category:"wip", label: 0},
             {name:"responsive", category:"wip", label: 1},
             {name:"hardworking", category:"wip", label: 2},
             {name:"efficient", category:"wip",  label: 3},
-            {name:"productive",category:"wip",  label: 4},
-            {name:"creative",category:"wip",  label: 5},
-            {name:"innovative",category:"wip",  label: 6},
-            {name:"dedicated",category:"wip",  label: 7}
+            {name:"productive", category:"wip",  label: 4},
+            {name:"creative", category:"wip",  label: 5},
+            {name:"innovative", category:"wip",  label: 6},
+            {name:"dedicated", category:"wip",  label: 7}
         ]
     };
 
@@ -211,8 +211,8 @@ export default class SemanticSurvey extends Component {
             timestampsInSnapshots: true
         })
         var tasks = {}
-        for (var i=0; i<names.length; i++){
-            tasks[names[i]]=[];
+        for (var i = 0; i < names.length; i++) {
+            tasks[names[i]] = [];
         }
         this.state.tasks.forEach ((t) => {
             if(t.category != "wip") {
@@ -222,10 +222,6 @@ export default class SemanticSurvey extends Component {
             }
         });
         console.log(tasks)
-        db.collection("test").add(
-            tasks
-        );
-        
-        
+        db.collection("test").add(tasks);
     }
 }
