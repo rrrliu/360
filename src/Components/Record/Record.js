@@ -10,6 +10,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import ListItem from "@material-ui/core/ListItem/ListItem";
 import ListItemText from "@material-ui/core/ListItemText/ListItemText";
+import NavButton from "../NavButton/NavButton";
 
 
 export default function Record(props) {
@@ -39,6 +40,7 @@ export default function Record(props) {
                 </Toolbar>
             </AppBar>
             {feedbackCards}
+            <NavLink to="/" className="backNav" /*onClick={this.addData.bind(this)}*/><NavButton nav='< Exit'/></NavLink>
         </MuiThemeProvider>
     );
 }

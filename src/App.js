@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import GivePage from './Components/feedback/GivePage';
 import ReviewPage from './Components/feedback/ReviewPage';
-import Distribution from './Components/Distribution/Distribution'
+import Distribution from './Components/Distribution/Distribution';
 import PropTypes from 'prop-types';
 import './App.css';
 import Dashboard from './Components/Dashboard/Dashboard'
@@ -13,42 +13,42 @@ import amber from "@material-ui/core/colors/amber";
 import API from './API.js'
 
 const feedbacks = {
-    week1: {string: "Week 1", current: false, weekFeedbacks: {
+    week1: {string: "Week 8", current: true, weekFeedbacks: {
             feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
             },
-    week2: {string: "Week 2", current: false, weekFeedbacks: {
+    week2: {string: "Week 9", current: false, weekFeedbacks: {
             feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
             },
-    week3: {string: "Week 3", current: false, weekFeedbacks: {
+    week3: {string: "Week 10", current: false, weekFeedbacks: {
             feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
         },
-    week4: {string: "Week 4", current: false, weekFeedbacks: {
+    week4: {string: "Week 11", current: false, weekFeedbacks: {
             feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
             },
-    week5: {string: "Week 5", current: false,weekFeedbacks: {
+    week5: {string: "Week 12", current: false,weekFeedbacks: {
             feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
             },
-    week6: {string: "Week 6", current: false, weekFeedbacks: {
+    week6: {string: "Week 13", current: false, weekFeedbacks: {
             feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
             },
-    week7: {string: "Week 7", current: false,weekFeedbacks: {
+    week7: {string: "Week 14", current: false,weekFeedbacks: {
             feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
             },
-    week8: {string: "Week 8", current: true, weekFeedbacks: {
+    week8: {string: "Week 15", current: false, weekFeedbacks: {
             feedback1: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback2: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             feedback3: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
@@ -63,7 +63,7 @@ const appTheme = createMuiTheme({
 
 let routes = [
     {
-        path: '/dashboard',
+        path: '/',
         component: Dashboard,
         props:
             {
@@ -74,8 +74,7 @@ let routes = [
     },
     {
         path: '/semantics',
-        component:
-        SemanticSurvey,
+        component: SemanticSurvey,
         props:
             {
                 theme: appTheme
@@ -83,8 +82,7 @@ let routes = [
     },
     {
         path: '/distribution',
-        component:
-        Distribution,
+        component: Distribution,
         props:
             {
                 theme: appTheme
@@ -92,8 +90,7 @@ let routes = [
     },
     {
         path: '/give',
-        component:
-        GivePage,
+        component: GivePage,
         props:
             {
                 theme: appTheme
@@ -101,8 +98,7 @@ let routes = [
     },
     {
         path: '/review',
-        component:
-        ReviewPage,
+        component: ReviewPage,
         props:
             {
                 theme: appTheme
@@ -110,15 +106,14 @@ let routes = [
     },
     {
         path: '/record',
-        component:
-        Record,
+        component: Record,
         props:
             {
                 theme: appTheme,
                 feedbackList: feedbacks,
                 week: feedbacks['week1']['string']
             }
-    }
+    },
 ];
 
 class App extends Component {
@@ -130,7 +125,7 @@ class App extends Component {
                 <Router>
                     <Switch>
                         {routes.map(({path, component: C, props}) => (
-                            <Route path={path} render={() => <C {...props}/>}/>
+                          <Route exact path={path} render={() => <C {...props}/>}/>
                         ))}
                     </Switch>
                 </Router>

@@ -1,7 +1,9 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Button from '@material-ui/core/Button'
-import firebase from '../../firebase';
+import firebase from '../../firebase/firebase';
+import Typography from '@material-ui/core/Typography';
+
 
 export default class Slider extends Component {
 
@@ -24,6 +26,7 @@ export default class Slider extends Component {
     render() {
         return (
             <div className="member">
+                <Typography align='center' className='sliderName'>{this.props.teammate}</Typography>
                 <Result result={this.props.count} />
                 <Button className='distButton' variant='outlined' onClick={() => this.decrement()}>-</Button>
                 <Button className='distButton' variant='outlined' onClick={() => this.increment()}>+</Button>
@@ -38,7 +41,7 @@ export default class Slider extends Component {
             timestampsInSnapshots: true
         })
         const userRef = db.collection("users").add({
-            test: this.state.count
+            test: 1
         })
     }
     

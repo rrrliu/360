@@ -73,7 +73,13 @@ a {
     color: rgba(0, 0, 0, 0.54) !important;
 }
 
+.sliderName{
+    margin-top: 5% !important;
+    font-size: 18px !important;
+}
+
 .result{
+    font-size: 22px !important;
     text-align: center;
 }
 

@@ -2,8 +2,15 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import Adjective from './Adjective.jsx';
 import './SemanticSurvey.css';
-import firebase from '../../firebase.js';
-import NextButton from '../NextButton/NextButton'
+import NavButton from '../NavButton/NavButton'
+import firebase from '../../firebase/firebase';
+import AppBar from '@material-ui/core/AppBar';
+import Toolbar from '@material-ui/core/Toolbar';
+import Typography from '@material-ui/core/Typography';
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import Card from '@material-ui/core/Card';
+import CardContent from '@material-ui/core/CardContent';
+
 
 const names= ["harish", "isabelle", "andrew"];
 
@@ -107,57 +114,67 @@ export default class SemanticSurvey extends Component {
         });
 
         if (names.length==4){return (
-            <div>
-            <div className="container-drag">
-                <h2 className="header">Please assign adjectives to your teammates (up to 5)!</h2>
-                <div className="wip"
-                     onDragOver={(e)=>this.onDragOver(e)}
-                     onDrop={(e)=>{this.onDrop(e, "wip")}}>
-                    <span className="task-header">WIP</span>
-                    {tasks.wip}
+            <MuiThemeProvider theme={this.props.theme}>
+                <AppBar position="sticky" color="primary">
+                    <Toolbar>
+                        <Typography variant="h6" color="inherit" className="dashTitle">
+                            Semantic Evaluation
+                        </Typography>
+                    </Toolbar>
+                </AppBar>
+                <Typography align='center' variant='title' className='pageInstructions'>Assign up to 5 adjectives to each of your teammates.</Typography>
+                <div className="container-drag">
+                    <div className="wip"
+                         onDragOver={(e)=>this.onDragOver(e)}
+                         onDrop={(e)=>{this.onDrop(e, "wip")}}>
+                        {tasks.wip}
+                    </div>
+                    <div className= "chest-containers">
+                    {/* {this.createChests(tasks)} */}
+                        <div className="four-container"
+                             onDragOver={(e)=>this.onDragOver(e)}
+                             onDrop={(e)=>this.onDrop(e, "harish")}>
+                            <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
+                            {tasks.harish}
+                        </div>
+                        <div className="four-container"
+                             onDragOver={(e)=>this.onDragOver(e)}
+                             onDrop={(e)=>this.onDrop(e, "isabelle")}>
+                            <Typography className='chestTitle' gutterBottom>{names[1]}</Typography>
+                            {tasks.isabelle}
+                        </div>
+                        <div className="four-container"
+                             onDragOver={(e)=>this.onDragOver(e)}
+                             onDrop={(e)=>this.onDrop(e, "andrew")}>
+                            <Typography className='chestTitle' gutterBottom>{names[2]}</Typography>
+                            {tasks.andrew}
+                        </div>
+                        <div className="four-container"
+                             onDragOver={(e)=>this.onDragOver(e)}
+                             onDrop={(e)=>this.onDrop(e, "richard")}>
+                            <Typography className='chestTitle' gutterBottom>{names[3]}</Typography>
+                            {tasks.richard}
+                        </div>
+                    </div>
                 </div>
-                <div className= "chest-containers">
-                {/* {this.createChests(tasks)} */}
-                    <div className="four-container"
-                         onDragOver={(e)=>this.onDragOver(e)}
-                         onDrop={(e)=>this.onDrop(e, "harish")}>
-                        <span className="task-header">{names[0]}</span>
-                        {tasks.harish}
-                    </div>
-                    <div className="four-container"
-                         onDragOver={(e)=>this.onDragOver(e)}
-                         onDrop={(e)=>this.onDrop(e, "isabelle")}>
-                        <span className="task-header">{names[1]}</span>
-                        {tasks.isabelle}
-                    </div>
-                    <div className="four-container"
-                         onDragOver={(e)=>this.onDragOver(e)}
-                         onDrop={(e)=>this.onDrop(e, "andrew")}>
-                        <span className="task-header">{names[2]}</span>
-                        {tasks.andrew} 
-                    </div>
-                    <div className="four-container"
-                         onDragOver={(e)=>this.onDragOver(e)}
-                         onDrop={(e)=>this.onDrop(e, "richard")}>
-                        <span className="task-header">{names[3]}</span>
-                        {tasks.richard} 
-                    </div>
-                </div>
-                
-
-
-            </div>
-            <NavLink to="/give" className= "next-button"> Next </NavLink>
-            </div>
+                <NavLink to="/distribution" className="backNav" onClick= {this.addData.bind(this)}><NavButton nav='< Back'/></NavLink>
+                <NavLink to="/give" className="nextNav" onClick= {this.addData.bind(this)}><NavButton nav='Next >'/></NavLink>
+            </MuiThemeProvider>
         )};
         if (names.length==3){ return (
-        <div>
+        <MuiThemeProvider theme={this.props.theme}>
+            <AppBar position="sticky" color="primary">
+                <Toolbar>
+                    <Typography variant="h6" color="inherit" className="dashTitle">
+                        Semantic Evaluation
+                    </Typography>
+                </Toolbar>
+            </AppBar>
+            <Typography align='center' variant='title' className='pageInstructions'>Assign up to 5 adjectives to each of your teammates.</Typography>
             <div className="container-drag">
-                <h2 className="header">Please assign adjectives to your teammates (up to 5)!</h2>
                 <div className="wip"
                      onDragOver={(e)=>this.onDragOver(e)}
                      onDrop={(e)=>{this.onDrop(e, "wip")}}>
-                    <span className="task-header">WIP</span>
                     {tasks.wip}
                 </div>
                 <div className= "chest-containers">
@@ -165,26 +182,26 @@ export default class SemanticSurvey extends Component {
                     <div className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
                          onDrop={(e)=>this.onDrop(e, "harish")}>
-                        <span className="task-header">{names[0]}</span>
+                        <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
                         {tasks.harish}
                     </div>
                     <div className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
                          onDrop={(e)=>this.onDrop(e, "isabelle")}>
-                        <span className="task-header">{names[1]}</span>
+                        <Typography className='chestTitle' gutterBottom>{names[1]}</Typography>
                         {tasks.isabelle}
                     </div>
                     <div className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
                          onDrop={(e)=>this.onDrop(e, "andrew")}>
-                        <span className="task-header">{names[2]}</span>
+                        <Typography className='chestTitle' gutterBottom>{names[2]}</Typography>
                         {tasks.andrew} 
                     </div>
-
+                </div>
             </div>
-            <NavLink to="/give" className= "nextNav" onClick= {this.addData.bind(this)}><NextButton/></NavLink>
-            </div>
-        </div>
+            <NavLink to="/distribution" className="backNav" onClick= {this.addData.bind(this)}><NavButton nav='< Back'/></NavLink>
+            <NavLink to="/give" className="nextNav" onClick= {this.addData.bind(this)}><NavButton nav='Next >'/></NavLink>
+        </MuiThemeProvider>
     )};
     }
 
