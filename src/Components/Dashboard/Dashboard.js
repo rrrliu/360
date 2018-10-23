@@ -30,7 +30,7 @@ function displayContent(user) {
     const firstName = user.displayName.split(' ')[0];
     document.getElementById("name").innerHTML = firstName;
     document.getElementById("signout-button").addEventListener('click', e => {
-    firebase.auth().signOut();
+        firebase.auth().signOut();
     });
 }
 
