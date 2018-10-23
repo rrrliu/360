@@ -6,12 +6,13 @@ import Divider from '@material-ui/core/Divider';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
+import { NavLink } from 'react-router-dom';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import amber from '@material-ui/core/colors/amber'
 import './Dashboard.css'
-import { NavLink } from 'react-router-dom'
 import config from '../../firebase/firebase';
 import firebase from 'firebase';
+import App from '../../App';
 
 function login() {
     function newLoginHappened(user) {
@@ -37,7 +38,7 @@ export default function Dashboard(props) {
 
     let weekList = Object.keys(props.weekList).map(function(key) {
         if (!(props.weekList[key]['current'])) {
-            return <NavLink to="/record" className="weekLink">
+            return <NavLink to="/record" className="weekLink" onClick={() => App.routes[5]['props']['week'] = props.weekList[key]['string']}>
                 <ListItem button>
                     <ListItemText primary={props.weekList[key]['string']}/>
                 </ListItem>
