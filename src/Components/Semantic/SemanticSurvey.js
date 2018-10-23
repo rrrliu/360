@@ -165,7 +165,7 @@ export default class SemanticSurvey extends Component {
         <MuiThemeProvider theme={this.props.theme}>
             <AppBar position="sticky" color="primary">
                 <Toolbar>
-                    <Typography variant="h6" color="inherit" className="dashTitle">
+                    <Typography variant="h6" color="inherit" className="dashTitle headerText">
                         Semantic Evaluation
                     </Typography>
                 </Toolbar>

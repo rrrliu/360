@@ -19,7 +19,7 @@ export default class Distribution extends Component{
             <MuiThemeProvider theme={this.props.theme}>
                 <AppBar position="sticky" color="primary">
                     <Toolbar>
-                        <Typography variant="h6" color="inherit">
+                        <Typography variant="h6" color="inherit" className='headerText'>
                             Distribution
                         </Typography>
                     </Toolbar>

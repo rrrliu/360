@@ -57,7 +57,7 @@ export default function Dashboard(props) {
         <MuiThemeProvider theme={props.theme}>
             <AppBar position="sticky" color="primary">
                 <Toolbar>
-                    <Typography variant="h6" color="inherit">
+                    <Typography variant="h6" color="inherit" className='headerText'>
                         { login() }
                         Hi, <strong id="name"></strong>!
                     </Typography>
