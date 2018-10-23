@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import PropTypes from 'prop-types'
 import Button from '@material-ui/core/Button'
+import firebase from '../../firebase';
 
 export default class Slider extends Component {
 
@@ -12,10 +13,12 @@ export default class Slider extends Component {
 
     increment() {
         this.props.updateVal(this.props.step, this.props.index);
+        this.addData();
     }
     
     decrement() {
         this.props.updateVal(-1*this.props.step, this.props.index);
+        this.addData();
     }
 
     render() {
@@ -27,10 +30,20 @@ export default class Slider extends Component {
             </div>
         )
     }
+  
+  addData() {
+        // Firebase stuff
+        const db = firebase.firestore();
+        db.settings({
+            timestampsInSnapshots: true
+        })
+        const userRef = db.collection("users").add({
+            test: this.state.count
+        })
+    }
     
 }
 
-// Components
 const Result = ({result}) => (
     <div className="result">{result}</div>
 );
