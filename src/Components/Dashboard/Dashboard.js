@@ -10,9 +10,28 @@ import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import amber from '@material-ui/core/colors/amber'
 import './Dashboard.css'
 import { NavLink } from 'react-router-dom'
-import App from '../../App'
+import config from '../../firebase/firebase';
+import firebase from 'firebase';
 
+function login() {
+    function newLoginHappened(user) {
+      if (user) {
+        displayContent(user);
+      } else {
+        var provider = new firebase.auth.GoogleAuthProvider();
+        firebase.auth().signInWithRedirect(provider);
+      }
+    }
+    firebase.auth().onAuthStateChanged(newLoginHappened);
+}
 
+function displayContent(user) {
+    const firstName = user.displayName.split(' ')[0];
+    document.getElementById("name").innerHTML = firstName;
+    document.getElementById("signout-button").addEventListener('click', e => {
+    firebase.auth().signOut();
+    });
+}
 
 export default function Dashboard(props) {
 
@@ -38,9 +57,12 @@ export default function Dashboard(props) {
             <AppBar position="sticky" color="primary">
                 <Toolbar>
                     <Typography variant="h6" color="inherit">
-                        Dashboard
+                        { login() }
+                        Hi, <strong id="name"></strong>!
                     </Typography>
+                    <input type="button" value="Sign Out" id="signout-button" />
                 </Toolbar>
+                
             </AppBar>
             <List>
                 {weekList}

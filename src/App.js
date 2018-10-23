@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import GivePage from './Components/feedback/GivePage';
 import ReviewPage from './Components/feedback/ReviewPage';
-import Distribution from './Components/Distribution/Distribution'
+import Distribution from './Components/Distribution/Distribution';
 import PropTypes from 'prop-types';
 import './App.css';
 import Dashboard from './Components/Dashboard/Dashboard'
@@ -13,14 +13,14 @@ import amber from "@material-ui/core/colors/amber";
 import API from './API.js'
 
 const weeks = {
-    week1: {string: "Week 1", current: false},
+    week1: {string: "Week 1", current: true},
     week2: {string: "Week 2", current: false},
     week3: {string: "Week 3", current: false},
     week4: {string: "Week 4", current: false},
     week5: {string: "Week 5", current: false},
     week6: {string: "Week 6", current: false},
     week7: {string: "Week 7", current: false},
-    week8: {string: "Week 8", current: true}
+    week8: {string: "Week 8", current: false}
 };
 
 const appTheme = createMuiTheme({
@@ -31,7 +31,7 @@ const appTheme = createMuiTheme({
 
 let routes = [
     {
-        path: '/dashboard',
+        path: '/',
         component: Dashboard,
         props:
             {
@@ -42,8 +42,7 @@ let routes = [
     },
     {
         path: '/semantics',
-        component:
-        SemanticSurvey,
+        component: SemanticSurvey,
         props:
             {
                 theme: appTheme
@@ -51,8 +50,7 @@ let routes = [
     },
     {
         path: '/distribution',
-        component:
-        Distribution,
+        component: Distribution,
         props:
             {
                 theme: appTheme
@@ -60,8 +58,7 @@ let routes = [
     },
     {
         path: '/give',
-        component:
-        GivePage,
+        component: GivePage,
         props:
             {
                 theme: appTheme
@@ -69,8 +66,7 @@ let routes = [
     },
     {
         path: '/review',
-        component:
-        ReviewPage,
+        component: ReviewPage,
         props:
             {
                 theme: appTheme
@@ -78,13 +74,12 @@ let routes = [
     },
     {
         path: '/record',
-        component:
-        Record,
+        component: Record,
         props:
             {
                 theme: appTheme
             }
-    }
+    },
 ];
 
 class App extends Component {
@@ -96,7 +91,7 @@ class App extends Component {
                 <Router>
                     <Switch>
                         {routes.map(({path, component: C, props}) => (
-                            <Route path={path} render={() => <C {...props}/>}/>
+                          <Route exact path={path} render={() => <C {...props}/>}/>
                         ))}
                     </Switch>
                 </Router>

@@ -11,3 +11,9 @@
 .weekLink:hover {
     text-decoration: none;
 }
+
+#signout-button {
+    /* float: right; */
+    position: absolute;
+    right: 2%;
+}
