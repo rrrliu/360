@@ -86,9 +86,16 @@ a {
 .distButton {
     font-size: 18px;
     font-weight: bold;
+    margin: 0 auto !important;
 }
 
 .sliderContainer{
     display: flex;
     justify-content: space-around;
+}
+
+.member {
+    /*display: flex;*/
+    /*flex-wrap: wrap;*/
+    /*justify-content: center;*/
 }
