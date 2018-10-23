@@ -11,6 +11,7 @@ import Record from './Components/Record/Record'
 import {createMuiTheme} from "@material-ui/core";
 import amber from "@material-ui/core/colors/amber";
 import API from './API.js'
+import Confirmation from './Components/confirmation/Confirmation';
 
 const feedbacks = {
     week1: {string: "Week 8", current: true, weekFeedbacks: {
@@ -107,6 +108,16 @@ let routes = [
     {
         path: '/record',
         component: Record,
+        props:
+            {
+                theme: appTheme,
+                feedbackList: feedbacks,
+                week: feedbacks['week1']['string']
+            }
+    },
+    {
+        path: '/confirm',
+        component: Confirmation,
         props:
             {
                 theme: appTheme,

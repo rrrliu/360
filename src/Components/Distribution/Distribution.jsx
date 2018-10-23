@@ -11,7 +11,7 @@ import SliderContainer from './SliderContainer'
 import {NavLink} from "react-router-dom";
 import NavButton from "../NavButton/NavButton";
 
-const teammates = ['harish', 'isabelle', 'andrew', 'richard'];
+const teammates = ['Harish', 'Isabelle', 'Andrew', 'Richard'];
 
 export default class Distribution extends Component{
     render() {

@@ -98,7 +98,7 @@ export default class ReviewPage extends Component{
                 </div>
                 <NavLink to="/give" className="backNav" /*onClick={this.addData.bind(this)}*/><NavButton
                     nav='< Back'/></NavLink>
-                <NavLink to="/" className="nextNav" /*onClick={this.addData.bind(this)}*/><NavButton nav='Submit'/></NavLink>
+                <NavLink to="/confirm" className="nextNav" /*onClick={this.addData.bind(this)}*/><NavButton nav='Submit'/></NavLink>
             </MuiThemeProvider>
         )
     }
