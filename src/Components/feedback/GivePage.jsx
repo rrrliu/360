@@ -34,7 +34,10 @@ export default class GivePage extends Component {
                     </Toolbar>
                 </AppBar>
                 <div className='pageInstructions'>
-                    <Typography align='center' variant='title'>Write out some comments for your crew members with regard to what they do well, and how they could improve. Be specific (this will get graded)!</Typography>
+                    <Typography align='center' variant='title'>
+                        <p>Captain! Write out some comments for your crew members with regard to what they do well, and how they could improve.</p>
+                        You can use sentences, bullet points, etc., as long as you be specific&mdash;this will be graded!
+                    </Typography>
                 </div>
                 <form className='giveFeedback'>
                     {this.qualList}

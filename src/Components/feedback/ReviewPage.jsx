@@ -28,7 +28,9 @@ export default class ReviewPage extends Component{
                     <Card className='feedbackReviewContainer'>
                         <CardContent>
                             <TextField multiline variant='outlined' disabled
-                                       value="[REDACTED] is the worst teammate I've ever had, please move me."
+                                       value="This week, [REDACTED] sometimes showed up to meetings late or didn't show up at all.
+                                       However, this was understandable because we found out he had three midterms this week.
+                                       One suggestion for [REDACTED] is to make it clear when you was available and be more transparent about your schedule."
                                        margin='normal' className='feedbackReview'/>
                             <div className="demo">
                                 <div className="ratingControl">

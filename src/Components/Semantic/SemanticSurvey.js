@@ -219,24 +219,24 @@ export default class SemanticSurvey extends Component {
     }
 
     addData() {
-        const db = firebase.firestore();
-        db.settings({
-            timestampsInSnapshots: true
-        })
-        var tasks = {}
-        for (var i=0; i<crew.length; i++){
-            tasks[crew[i]]=[];
-        }
-        this.state.tasks.forEach ((t) => {
-            if(t.category != "wip") {
-                tasks[t.category].push(
-                    t.name
-                );
-            }
-        });
-        console.log(tasks)
-        db.collection("test").add(
-            tasks
-        );
+        // const db = firebase.firestore();
+        // db.settings({
+        //     timestampsInSnapshots: true
+        // })
+        // var tasks = {}
+        // for (var i=0; i<crew.length; i++){
+        //     tasks[crew[i]]=[];
+        // }
+        // this.state.tasks.forEach ((t) => {
+        //     if(t.category != "wip") {
+        //         tasks[t.category].push(
+        //             t.name
+        //         );
+        //     }
+        // });
+        // console.log(tasks)
+        // db.collection("test").add(
+        //     tasks
+        // );
     }
 }
