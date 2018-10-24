@@ -1,15 +1,17 @@
 @import url('https://fonts.googleapis.com/css?family=Raleway|Roboto');
 
-.weekLink span{
-    color: white !important;
-}
-
 .weekLink:hover {
     text-decoration: none;
 }
 
-.weekListItem {
-    text-align: center;
+.weekButton[disabled] span{
+    color: #eeeeee !important;
+}
+
+
+.weekButton span{
+    color: white !important;
+    font-size: 16px !important;
 }
 
 #signout-button {
@@ -35,6 +37,14 @@ body {
     width: 100%;
 }
 
+.background {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 .message {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
@@ -54,7 +64,8 @@ body {
     font-size: 100px;
     text-align: center;
     font-family: "Raleway", sans-serif;
-    padding-top: 64px;
+    margin-bottom: 0;
+    margin-top: -5rem;
 }
 
 .dd-button {
@@ -64,6 +75,10 @@ body {
 #embark-button {
     color: #ffffff;
     font-size: 24px;
+}
+
+.buttonContainer {
+    margin-top: 1rem;
 }
 
 .first-header {
