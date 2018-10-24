@@ -136,8 +136,8 @@ export default class SemanticSurvey extends Component {
                     </Toolbar>
                 </AppBar>
                 <div className='pageInstructions'>
-136	                <Typography align='center' variant='title' >More loot! Hand up to 5 golden coins to each of your crew members.</Typography>
-137	            </div>
+	                <Typography align='center' variant='title' >More loot! Hand up to 5 golden coins to each of your crew members.</Typography>
+	            </div>
                 <div className="container-drag">
                     <Card className="wip"
                          onDragOver={(e)=>this.onDragOver(e)}
@@ -182,7 +182,7 @@ export default class SemanticSurvey extends Component {
                 <NavLink to="/give" className="nextNav" onClick= {this.addData.bind(this)}><NavButton nav='Next >'/></NavLink>
             </MuiThemeProvider>
         )};
-        if (names.length==3){ return (
+        if (names.length === 3){ return (
         <MuiThemeProvider theme={this.props.theme}>
             <AppBar position="sticky" color="secondary">
                 <Toolbar>
@@ -191,13 +191,15 @@ export default class SemanticSurvey extends Component {
                     </Typography>
                 </Toolbar>
             </AppBar>
-            <Typography align='center' variant='title' className='pageInstructions'>More loot! Hand up to 5 golden coins to each of your crew members.</Typography>
+            <div className='pageInstructions'>
+                <Typography align='center' variant='title'>More loot! Hand up to 5 golden coins to each of your crew members.</Typography>
+            </div>
             <div className="container-drag">
-                <div className="wip"
+                <Card className="wip"
                      onDragOver={(e)=>this.onDragOver(e)}
                      onDrop={(e)=>{this.onDrop(e, "wip")}}>
                     {tasks.wip}
-                </div>
+                </Card>
                 <div className= "chest-containers">
                 {/* {this.createChests(tasks)} */}
                     <Card className="three-container"
