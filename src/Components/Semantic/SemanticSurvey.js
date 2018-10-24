@@ -12,7 +12,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
 
-const names= ["Harish", "Isabelle", "Betty", "Richard"];
+const names= ["Harish", "Isabelle", "Betty"];
 
 export default class SemanticSurvey extends Component {
     state = {
