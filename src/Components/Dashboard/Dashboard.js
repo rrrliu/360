@@ -79,7 +79,7 @@ function findTeam(name) {
         if (team.includes(name)) {
             let team_cp = team.slice();
             let index = team_cp.indexOf(name);
-            team_cp.splice(index, index + 1);
+            team_cp.splice(index, 1);
             crew = team_cp;
         }
     })
