@@ -10,9 +10,7 @@ import Typography from '@material-ui/core/Typography';
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
-
-
-const names= ["Harish", "Isabelle", "Andrew"];
+import { crew } from '../Dashboard/Dashboard';
 
 export default class SemanticSurvey extends Component {
     state = {
@@ -77,24 +75,10 @@ export default class SemanticSurvey extends Component {
         }
                 
             }
-
-        // createChests(t){
-        //     let chests=[];
-        //     for (var i=0; i<names.length; i++){
-        //         chests.push(<div className="person-container"
-        //         onDragOver={(e)=>this.onDragOver(e)}
-        //         onDrop={(e)=>this.onDrop(e, names[i])}>
-        //         <span className="task-header">{names[i]}</span>
-        //         {t.names[i]}
-        //     </div>)
-    
-        //     }
-        //     return chests
-        // }
         
     render() {
         var tasks={};
-        if (names.length == 3){
+        if (crew.length == 3){
             tasks = {
                 wip: [],
                 isabelle: [],
@@ -103,7 +87,7 @@ export default class SemanticSurvey extends Component {
             }
         }
 
-        else if (names.length == 4){
+        else if (crew.length == 4){
             tasks = {
                 wip: [],
                 isabelle: [],
@@ -126,7 +110,7 @@ export default class SemanticSurvey extends Component {
             );
         });
 
-        if (names.length==4){return (
+        if (crew.length==4){return (
             <MuiThemeProvider theme={this.props.theme}>
                 <AppBar position="sticky" color="secondary">
                     <Toolbar>
@@ -149,14 +133,14 @@ export default class SemanticSurvey extends Component {
                         <Card className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
                              onDrop={(e)=>this.onDrop(e, "harish")}>
-                            <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
+                            <Typography className='chestTitle' gutterBottom>{crew[0]}</Typography>
                             {tasks.harish}
                         </Card>
                         <Card className="four-container"
                                 onDragOver={(e)=>this.onDragOver(e)}
                                 onDrop={(e)=>this.onDrop(e, "isabelle")}>
                             <CardContent>
-                                <Typography className='chestTitle' gutterBottom>{names[1]}</Typography>
+                                <Typography className='chestTitle' gutterBottom>{crew[1]}</Typography>
                                 {tasks.isabelle}
                             </CardContent>
                         </Card>
@@ -164,7 +148,7 @@ export default class SemanticSurvey extends Component {
                              onDragOver={(e)=>this.onDragOver(e)}
                              onDrop={(e)=>this.onDrop(e, "andrew")}>
                              <CardContent>
-                                <Typography className='chestTitle' gutterBottom>{names[2]}</Typography>
+                                <Typography className='chestTitle' gutterBottom>{crew[2]}</Typography>
                                 {tasks.andrew}
                             </CardContent>
                         </Card>
@@ -172,7 +156,7 @@ export default class SemanticSurvey extends Component {
                              onDragOver={(e)=>this.onDragOver(e)}
                              onDrop={(e)=>this.onDrop(e, "richard")}>
                              <CardContent>
-                                <Typography className='chestTitle' gutterBottom>{names[3]}</Typography>
+                                <Typography className='chestTitle' gutterBottom>{crew[3]}</Typography>
                                 {tasks.richard}
                             </CardContent>
                         </Card>
@@ -182,7 +166,7 @@ export default class SemanticSurvey extends Component {
                 <NavLink to="/give" className="nextNav" onClick= {this.addData.bind(this)}><NavButton nav='Next >'/></NavLink>
             </MuiThemeProvider>
         )};
-        if (names.length === 3){ return (
+        if (crew.length === 3){ return (
         <MuiThemeProvider theme={this.props.theme}>
             <AppBar position="sticky" color="secondary">
                 <Toolbar>
@@ -206,7 +190,7 @@ export default class SemanticSurvey extends Component {
                          onDragOver={(e)=>this.onDragOver(e)}
                          onDrop={(e)=>this.onDrop(e, "harish")}>
                          <CardContent>
-                            <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
+                            <Typography className='chestTitle' gutterBottom>{crew[0]}</Typography>
                             {tasks.harish}
                         </CardContent>
                     </Card>
@@ -214,7 +198,7 @@ export default class SemanticSurvey extends Component {
                          onDragOver={(e)=>this.onDragOver(e)}
                          onDrop={(e)=>this.onDrop(e, "isabelle")}>
                          <CardContent>
-                            <Typography className='chestTitle' gutterBottom>{names[1]}</Typography>
+                            <Typography className='chestTitle' gutterBottom>{crew[1]}</Typography>
                             {tasks.isabelle}
                         </CardContent>
                     </Card>
@@ -222,7 +206,7 @@ export default class SemanticSurvey extends Component {
                          onDragOver={(e)=>this.onDragOver(e)}
                          onDrop={(e)=>this.onDrop(e, "andrew")}>
                          <CardContent>
-                            <Typography className='chestTitle' gutterBottom>{names[2]}</Typography>
+                            <Typography className='chestTitle' gutterBottom>{crew[2]}</Typography>
                             {tasks.andrew} 
                         </CardContent>
                     </Card>
@@ -240,8 +224,8 @@ export default class SemanticSurvey extends Component {
             timestampsInSnapshots: true
         })
         var tasks = {}
-        for (var i=0; i<names.length; i++){
-            tasks[names[i]]=[];
+        for (var i=0; i<crew.length; i++){
+            tasks[crew[i]]=[];
         }
         this.state.tasks.forEach ((t) => {
             if(t.category != "wip") {

@@ -11,8 +11,8 @@ import SliderContainer from './SliderContainer'
 import {NavLink} from "react-router-dom";
 import NavButton from "../NavButton/NavButton";
 import firebase from '../../firebase/firebase';
+import { crew } from '../Dashboard/Dashboard';
 
-const teammates = ['harish', 'isabelle', 'andrew'];
 
 export default class Distribution extends Component {
     state = {
@@ -49,7 +49,7 @@ export default class Distribution extends Component {
                             How often is each crew member present during the meetings? How engaged are they during the
                             meetings?
                         </Typography>
-                        <SliderContainer teammates={teammates} onRetrieveData={this.handleCounts.bind(this)} />
+                        <SliderContainer teammates={crew} onRetrieveData={this.handleCounts.bind(this)} />
                     </CardContent>
                 </Card>
                 <Card className="category">
@@ -62,7 +62,7 @@ export default class Distribution extends Component {
                             offer suggestions?
                         <p></p>
                         </Typography>
-                        <SliderContainer teammates={teammates} onRetrieveData={this.handleCounts.bind(this)} />
+                        <SliderContainer teammates={crew} onRetrieveData={this.handleCounts.bind(this)} />
                     </CardContent>
                 </Card>
                 <Card className="category">
@@ -74,7 +74,7 @@ export default class Distribution extends Component {
                             How much time does each crew member commit to the project? How much do they get done in that
                             time?
                         </Typography>
-                        <SliderContainer teammates={teammates} onRetrieveData={this.handleCounts.bind(this)} />
+                        <SliderContainer teammates={crew} onRetrieveData={this.handleCounts.bind(this)} />
                     </CardContent>
                 </Card>
                 <Card className="category">
@@ -86,7 +86,7 @@ export default class Distribution extends Component {
                             To what extent does each crew member offer new ideas? How often do they propose new approaches
                             to the same problems?
                         </Typography>
-                        <SliderContainer teammates={teammates} onRetrieveData={this.handleCounts.bind(this)} />
+                        <SliderContainer teammates={crew} onRetrieveData={this.handleCounts.bind(this)} />
                     </CardContent>
                 </Card>
                 <NavLink to="/" className="backNav" onClick={this.addData.bind(this)}><NavButton
@@ -103,11 +103,11 @@ export default class Distribution extends Component {
             timestampsInSnapshots: true
         })
         console.log(this.state.counts)
-        for (var i=0; i<teammates.length; i++){
+        for (var i=0; i<crew.length; i++){
             let mate={};
-            mate[teammates[i]]=[];
+            mate[crew[i]]=[];
             for (var j=0; j<this.state.counts.length; j++){
-                mate[teammates[i]].push(this.state.counts[j][i]);
+                mate[crew[i]].push(this.state.counts[j][i]);
             }
             db.collection("distr").add({
                 mate    

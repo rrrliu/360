@@ -9,11 +9,10 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 import {NavLink} from "react-router-dom";
 import NavButton from "../NavButton/NavButton";
-
-const teammates = ['Harish', 'Isabelle', 'Andrew', 'Richard'];
+import { crew } from '../Dashboard/Dashboard';
 
 export default class GivePage extends Component{
-    qualList = teammates.map((name) => {
+    qualList = crew.map((name) => {
         return <Card className='feedbackTextContainer'>
             <CardContent>
                 <Typography className='feedbackTextTitle' gutterBottom>

@@ -37,7 +37,7 @@ const teams = [
     ['Charlie F', 'Chaitanya G', 'Rahul C', 'Neha N', 'Alfonso S'],
 ]
 
-let crew = [];
+export let crew = [];
 let username;
 
 const styles = theme => ({
@@ -55,7 +55,8 @@ function login() {
       if (user) {
         displayContent(user);
         username = getName(user);
-        crew = findTeam(username);
+        findTeam(username);
+        console.log(crew);
       } else {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(provider);
@@ -74,14 +75,12 @@ function displayContent(user) {
 }
 
 function findTeam(name) {
-    console.log(name);
     teams.forEach(team => {
         if (team.includes(name)) {
             let team_cp = team.slice();
             let index = team_cp.indexOf(name);
             team_cp.splice(index, index + 1);
-            console.log(team_cp);
-            return team_cp;
+            crew = team_cp;
         }
     })
 }
