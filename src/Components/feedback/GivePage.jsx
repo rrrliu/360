@@ -11,7 +11,7 @@ import {NavLink} from "react-router-dom";
 import NavButton from "../NavButton/NavButton";
 import { crew } from '../Dashboard/Dashboard';
 
-export default class GivePage extends Component{
+export default class GivePage extends Component {
     qualList = crew.map((name) => {
         return <Card className='feedbackTextContainer'>
             <CardContent>
@@ -39,9 +39,9 @@ export default class GivePage extends Component{
                 <form className='giveFeedback'>
                     {this.qualList}
                 </form>
-                <NavLink to="/semantics" className="backNav" /*onClick={this.addData.bind(this)}*/><NavButton
+                <NavLink to="/distribution" className="backNav" /*onClick={this.addData.bind(this)}*/><NavButton
                     nav='< Back'/></NavLink>
-                <NavLink to="/review" className="nextNav" /*onClick={this.addData.bind(this)}*/><NavButton
+                <NavLink to="/semantics" className="nextNav" /*onClick={this.addData.bind(this)}*/><NavButton
                     nav='Next >'/></NavLink>
             </MuiThemeProvider>
         )

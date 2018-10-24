@@ -91,7 +91,7 @@ export default class Distribution extends Component {
                 </Card>
                 <NavLink to="/" className="backNav" onClick={this.addData.bind(this)}><NavButton
                     nav='< Exit'/></NavLink>
-                <NavLink to="/semantics" className="nextNav" onClick={this.addData.bind(this)}><NavButton
+                <NavLink to="/give" className="nextNav" onClick={this.addData.bind(this)}><NavButton
                     nav='Next >'/></NavLink>
             </MuiThemeProvider>
         );

@@ -212,8 +212,8 @@ export default class SemanticSurvey extends Component {
                     </Card>
                 </div>
             </div>
-            <NavLink to="/distribution" className="backNav" onClick= {this.addData.bind(this)}><NavButton nav='< Back'/></NavLink>
-            <NavLink to="/give" className="nextNav" onClick= {this.addData.bind(this)}><NavButton nav='Next >'/></NavLink>
+            <NavLink to="/give" className="backNav" onClick= {this.addData.bind(this)}><NavButton nav='< Back'/></NavLink>
+            <NavLink to="/review" className="nextNav" onClick= {this.addData.bind(this)}><NavButton nav='Next >'/></NavLink>
         </MuiThemeProvider>
     )};
     }
