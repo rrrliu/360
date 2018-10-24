@@ -27,14 +27,16 @@ export default class GivePage extends Component{
     render() {
         return (
             <MuiThemeProvider theme={this.props.theme}>
-                <AppBar position="sticky" color="primary">
+                <AppBar position="sticky" color="secondary">
                     <Toolbar>
                         <Typography variant="h6" color="inherit" className='headerText'>
                             Qualitative Feedback
                         </Typography>
                     </Toolbar>
                 </AppBar>
-                <Typography align='center' variant='title' className='pageInstructions'>Write out some comments for your crew members with regard to what they do well, and how they could improve. Be specific (this will get graded)!</Typography>
+                <div className='pageInstructions'>
+                    <Typography align='center' variant='title'>Write out some comments for your crew members with regard to what they do well, and how they could improve. Be specific (this will get graded)!</Typography>
+                </div>
                 <form className='giveFeedback'>
                     {this.qualList}
                 </form>

@@ -30,14 +30,16 @@ export default class Distribution extends Component {
     render() {
         return (
             <MuiThemeProvider theme={this.props.theme}>
-                <AppBar position="sticky" color="primary">
+                <AppBar position="sticky" color="secondary">
                     <Toolbar>
                         <Typography variant="h6" color="inherit" className='headerText'>
                             Distribution
                         </Typography>
                     </Toolbar>
                 </AppBar>
-                <Typography align='center' variant='title' className='pageInstructions'>Ahoy! There are 120 pieces of eight for each of the following categories. Distribute them amongst your crew as you see fit.</Typography>
+                <div className='pageInstructions'>
+                    <Typography align='center' variant='title'>Ahoy! There are 120 pieces of gold for each of the following categories. Distribute them amongst your crew as you see fit.</Typography>
+                </div>
                 <Card className="category">
                     <CardContent>
                         <Typography className='categoryTitle' gutterBottom>

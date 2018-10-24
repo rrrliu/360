@@ -1,5 +1,4 @@
 body {
-  padding-top: 50px;
   background-color: #eee;
   text-align: center;
   font-family: 'Open Sans', sans-serif;  
@@ -88,7 +87,14 @@ a {
 }
 
 .pageInstructions {
-    margin: 3% auto 2% auto !important;
+    width: 80%;
+    padding: 16px;
+    background-color: rgba(0, 0, 0, 0.25);
+    margin: 1% auto 1% auto !important;
+}
+
+.pageInstructions h2 {
+    color: white !important;
     font-weight: bold !important;
 }
 

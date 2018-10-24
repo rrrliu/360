@@ -8,14 +8,15 @@ import Paper from '@material-ui/core/Paper';
 import Popper from '@material-ui/core/Popper';
 import MenuItem from '@material-ui/core/MenuItem';
 import MenuList from '@material-ui/core/MenuList';
-import { withStyles } from '@material-ui/core/styles';
+import {withStyles} from '@material-ui/core/styles';
 import List from '@material-ui/core/List';
 import ListItem from '@material-ui/core/ListItem';
+import ListItemText from '@material-ui/core/ListItemText';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
-import { NavLink } from 'react-router-dom';
-import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+import {NavLink} from 'react-router-dom';
+import {MuiThemeProvider, createMuiTheme} from '@material-ui/core/styles';
 import amber from '@material-ui/core/colors/amber'
 import './Dashboard.css';
 import config from '../../firebase/firebase';
@@ -41,13 +42,13 @@ let username;
 
 const styles = theme => ({
     root: {
-      display: 'flex',
+        display: 'flex',
     },
     paper: {
-      marginRight: theme.spacing.unit * 2,
+        marginRight: theme.spacing.unit * 2,
     },
-  });
-  
+});
+
 
 function login() {
     function newLoginHappened(user) {
@@ -60,6 +61,7 @@ function login() {
         firebase.auth().signInWithRedirect(provider);
       }
     }
+
     firebase.auth().onAuthStateChanged(newLoginHappened);
 }
 
@@ -102,8 +104,8 @@ class NewDashboard extends React.Component {
       handleClose = event => {
 
         if (this.anchorEl.contains(event.target)) {
-            
-        //   return <NavLink to="/record">Week 8</NavLink>;
+
+            //   return <NavLink to="/record">Week 8</NavLink>;
         }
     
         this.setState({ open: false });
@@ -132,62 +134,81 @@ class NewDashboard extends React.Component {
         //         </NavLink>
         //     }
         // });
+        let weekList = ["Week 9", "Week 10", "Week 11", "Week 12", "Week 13", "Week 14", "Week 15"].map(function(key) {
+            return <NavLink to="/record" className="weekLink">
+                <ListItem button disableGutters disabled divider>
+                    <ListItemText primary={key} className='weekListItem'/>
+                </ListItem>
+            </NavLink>
+        });
 
-    return (
-        <body background="map.jpg">
-                <Button id="signout-button">Sign Out</Button>
-                <div className= "first-header">
-                <h1 className='headerText'> { login() }
-                    Hi, <strong id="name"></strong>!</h1>
+        return (
+            <div className='background' background="map.jpg">
+            <Button id="signout-button">Sign Out</Button>
+            <h1 className='dashHeader'> {login()} Hi, <strong id="name"></strong>! </h1>
+            <div className={classes.root}>
+                <div className="dd-button">
+                    <NavLink to="/distribution" className='weekLink'>
+                        <Button
+                            id="embark-button"
+                            // buttonRef={node => {
+                            //     this.anchorEl = node;
+                            // }}
+                            // aria-owns={open ? 'menu-list-grow' : null}
+                            // aria-haspopup="true"
+                            // onClick={this.handleToggle}
+                        >
+                            Embark.
+                        </Button>
+                    </NavLink>
+                    <NavLink to="/record" className="weekLink">
+                        <ListItem button disableGutters divider>
+                            <ListItemText primary='Test Week' className='weekListItem'/>
+                        </ListItem>
+                    </NavLink>
+                    {weekList}
+                    {/*<Popper open={open} anchorEl={this.anchorEl} transition disablePortal>*/}
+                        {/*{({TransitionProps, placement}) => (*/}
+                            {/*<Grow*/}
+                                {/*{...TransitionProps}*/}
+                                {/*id="menu-list-grow"*/}
+                                {/*style={{transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom'}}*/}
+                            {/*>*/}
+                                {/*<Paper>*/}
+                                    {/*<ClickAwayListener onClickAway={this.handleClose}>*/}
+                                        {/*<MenuList>*/}
+                                            {/*<NavLink to="/distribution" className='weekLink'><MenuItem*/}
+                                                {/*onClick={this.handleClose}>Week 8</MenuItem></NavLink>*/}
+                                            {/*<NavLink to="/record" className='weekLink'><MenuItem*/}
+                                                {/*onClick={this.handleClose}>Week 9</MenuItem></NavLink>*/}
+                                            {/*<NavLink to="/record" className='weekLink'><MenuItem*/}
+                                                {/*onClick={this.handleClose}>Week 10</MenuItem></NavLink>*/}
+                                            {/*<NavLink to="/record" className='weekLink'><MenuItem*/}
+                                                {/*onClick={this.handleClose}>Week 11</MenuItem></NavLink>*/}
+                                            {/*<NavLink to="/record" className='weekLink'><MenuItem*/}
+                                                {/*onClick={this.handleClose}>Week 12</MenuItem></NavLink>*/}
+                                            {/*<NavLink to="/record" className='weekLink'><MenuItem*/}
+                                                {/*onClick={this.handleClose}>Week 13</MenuItem></NavLink>*/}
+                                            {/*<NavLink to="/record" className='weekLink'><MenuItem*/}
+                                                {/*onClick={this.handleClose}>Week 14</MenuItem></NavLink>*/}
+                                            {/*<NavLink to="/record" className='weekLink'><MenuItem*/}
+                                                {/*onClick={this.handleClose}>Week 15</MenuItem></NavLink>*/}
+                                        {/*</MenuList>*/}
+                                    {/*</ClickAwayListener>*/}
+                                {/*</Paper>*/}
+                            {/*</Grow>*/}
+                        {/*)}*/}
+                    {/*</Popper>*/}
+                </div>
+            </div>
+            </div>
 
-        <div className={classes.root}>
-        <div className= "dd-button">
-          <Button
-            id="embark-button"
-            buttonRef={node => {
-              this.anchorEl = node;
-            }}
-            aria-owns={open ? 'menu-list-grow' : null}
-            aria-haspopup="true"
-            onClick={this.handleToggle}
-          >
-            Embark.
-          </Button>
-          <Popper open={open} anchorEl={this.anchorEl} transition disablePortal>
-            {({ TransitionProps, placement }) => (
-              <Grow
-                {...TransitionProps}
-                id="menu-list-grow"
-                style={{ transformOrigin: placement === 'bottom' ? 'center top' : 'center bottom' }}
-              >
-                <Paper>
-                  <ClickAwayListener onClickAway={this.handleClose}>
-                    <MenuList>
-                      <MenuItem onClick={this.handleClose}><NavLink to="/distribution">Week 8</NavLink></MenuItem>
-                      <MenuItem onClick={this.handleClose}><NavLink to="/record">Week 9</NavLink></MenuItem>
-                      <MenuItem onClick={this.handleClose}><NavLink to="/record">Week 10</NavLink></MenuItem>
-                      <MenuItem onClick={this.handleClose}><NavLink to="/record">Week 11</NavLink></MenuItem>
-                      <MenuItem onClick={this.handleClose}><NavLink to="/record">Week 12</NavLink></MenuItem>
-                      <MenuItem onClick={this.handleClose}><NavLink to="/record">Week 13</NavLink></MenuItem>
-                      <MenuItem onClick={this.handleClose}><NavLink to="/record">Week 14</NavLink></MenuItem>
-                      <MenuItem onClick={this.handleClose}><NavLink to="/record">Week 15</NavLink></MenuItem>
-                    </MenuList>
-                  </ClickAwayListener>
-                </Paper>
-              </Grow>
-            )}
-          </Popper>
-          </div>
-        </div>
-      </div>
-        </body>
-        
-    );
-}
+        );
+    }
 }
 
 NewDashboard.propTypes = {
     classes: PropTypes.object.isRequired,
-  };  
+};
 
 export default withStyles(styles)(NewDashboard);

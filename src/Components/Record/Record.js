@@ -32,7 +32,7 @@ export default function Record(props) {
 
     return (
         <MuiThemeProvider theme={props.theme}>
-            <AppBar position="sticky" color="primary">
+            <AppBar position="sticky" color="secondary">
                 <Toolbar>
                     <Typography variant="h6" color="inherit">
                         Record
