@@ -12,7 +12,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
 
-const names= ["Harish", "Isabelle", "Andrew"];
+const names= ["Harish", "Isabelle", "Betty", "Richard"];
 
 export default class SemanticSurvey extends Component {
     state = {
@@ -93,13 +93,26 @@ export default class SemanticSurvey extends Component {
         // }
         
     render() {
-        var tasks = {
-            wip: [],
+        var tasks={};
+        if (names.length == 3){
+            tasks = {
+                wip: [],
+                isabelle: [],
+                harish: [],
+                andrew: [],
+            }
+        }
+
+        else if (names.length == 4){
+            tasks = {
+                wip: [],
+                isabelle: [],
+                harish: [],
+                andrew: [],
+                richard: []
+            }
         }
         
-        for (var i=0; i<names.length; i++){
-            tasks[names[i]]=[];
-        }
         this.state.tasks.forEach ((t) => {
             tasks[t.category].push(
                 <Adjective label= {t.name} key={t.name}
@@ -133,21 +146,21 @@ export default class SemanticSurvey extends Component {
                     {/* {this.createChests(tasks)} */}
                         <div className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
-                             onDrop={(e)=>this.onDrop(e, "Harish")}>
+                             onDrop={(e)=>this.onDrop(e, "harish")}>
                             <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
-                            {tasks.Harish}
+                            {tasks.harish}
                         </div>
                         <div className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
-                             onDrop={(e)=>this.onDrop(e, "Isabelle")}>
+                             onDrop={(e)=>this.onDrop(e, "isabelle")}>
                             <Typography className='chestTitle' gutterBottom>{names[1]}</Typography>
-                            {tasks.Isabelle}
+                            {tasks.isabelle}
                         </div>
                         <div className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
-                             onDrop={(e)=>this.onDrop(e, "Andrew")}>
+                             onDrop={(e)=>this.onDrop(e, "andrew")}>
                             <Typography className='chestTitle' gutterBottom>{names[2]}</Typography>
-                            {tasks.Andrew}
+                            {tasks.andrew}
                         </div>
                         <div className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
@@ -181,21 +194,21 @@ export default class SemanticSurvey extends Component {
                 {/* {this.createChests(tasks)} */}
                     <div className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
-                         onDrop={(e)=>this.onDrop(e, "Harish")}>
+                         onDrop={(e)=>this.onDrop(e, "harish")}>
                         <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
-                        {tasks.Harish}
+                        {tasks.harish}
                     </div>
                     <div className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
-                         onDrop={(e)=>this.onDrop(e, "Isabelle")}>
+                         onDrop={(e)=>this.onDrop(e, "isabelle")}>
                         <Typography className='chestTitle' gutterBottom>{names[1]}</Typography>
-                        {tasks.Isabelle}
+                        {tasks.isabelle}
                     </div>
                     <div className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
-                         onDrop={(e)=>this.onDrop(e, "Andrew")}>
+                         onDrop={(e)=>this.onDrop(e, "andrew")}>
                         <Typography className='chestTitle' gutterBottom>{names[2]}</Typography>
-                        {tasks.Andrew} 
+                        {tasks.andrew} 
                     </div>
                 </div>
             </div>
