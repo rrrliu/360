@@ -18,7 +18,7 @@ export default class Confirmation extends Component {
                             <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
                         </svg>
                         <Typography className='categorySubtitle' gutterBottom>
-                           Journey complete. Set your sails for next week.
+                           Journey complete. Set yer sails for next week.
                         </Typography>
                         <p></p>
                         <a href="/" id="signout">Dashboard</a>
