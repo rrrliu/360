@@ -12,7 +12,7 @@ import Card from '@material-ui/core/Card';
 import CardContent from '@material-ui/core/CardContent';
 
 
-const names= ["Harish", "Isabelle", "Andrew", "Richard"];
+const names= ["Harish", "Isabelle", "Andrew"];
 
 export default class SemanticSurvey extends Component {
     state = {
@@ -93,13 +93,26 @@ export default class SemanticSurvey extends Component {
         // }
         
     render() {
-        var tasks = {
-            wip: [],
+        var tasks={};
+        if (names.length == 3){
+            tasks = {
+                wip: [],
+                isabelle: [],
+                harish: [],
+                andrew: [],
+            }
+        }
+
+        else if (names.length == 4){
+            tasks = {
+                wip: [],
+                isabelle: [],
+                harish: [],
+                andrew: [],
+                richard: []
+            }
         }
         
-        for (var i=0; i<names.length; i++){
-            tasks[names[i]]=[];
-        }
         this.state.tasks.forEach ((t) => {
             tasks[t.category].push(
                 <Adjective label= {t.name} key={t.name}
@@ -123,8 +136,8 @@ export default class SemanticSurvey extends Component {
                     </Toolbar>
                 </AppBar>
                 <div className='pageInstructions'>
-                <Typography align='center' variant='title' >More loot! Hand up to 5 golden coins to each of your crew members.</Typography>
-                </div>
+136	                <Typography align='center' variant='title' >More loot! Hand up to 5 golden coins to each of your crew members.</Typography>
+137	            </div>
                 <div className="container-drag">
                     <Card className="wip"
                          onDragOver={(e)=>this.onDragOver(e)}
@@ -135,34 +148,32 @@ export default class SemanticSurvey extends Component {
                     {/* {this.createChests(tasks)} */}
                         <Card className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
-                             onDrop={(e)=>this.onDrop(e, "Harish")}>
-                            <CardContent>
-                                <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
-                                {tasks.Harish}
-                            </CardContent>
+                             onDrop={(e)=>this.onDrop(e, "harish")}>
+                            <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
+                            {tasks.harish}
                         </Card>
                         <Card className="four-container"
-                             onDragOver={(e)=>this.onDragOver(e)}
-                             onDrop={(e)=>this.onDrop(e, "Isabelle")}>
+                                onDragOver={(e)=>this.onDragOver(e)}
+                                onDrop={(e)=>this.onDrop(e, "isabelle")}>
                             <CardContent>
                                 <Typography className='chestTitle' gutterBottom>{names[1]}</Typography>
-                                {tasks.Isabelle}
+                                {tasks.isabelle}
                             </CardContent>
                         </Card>
                         <Card className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
-                             onDrop={(e)=>this.onDrop(e, "Andrew")}>
-                            <CardContent>
+                             onDrop={(e)=>this.onDrop(e, "andrew")}>
+                             <CardContent>
                                 <Typography className='chestTitle' gutterBottom>{names[2]}</Typography>
-                                {tasks.Andrew}
+                                {tasks.andrew}
                             </CardContent>
                         </Card>
                         <Card className="four-container"
                              onDragOver={(e)=>this.onDragOver(e)}
-                             onDrop={(e)=>this.onDrop(e, "Richard")}>
-                            <CardContent>
+                             onDrop={(e)=>this.onDrop(e, "richard")}>
+                             <CardContent>
                                 <Typography className='chestTitle' gutterBottom>{names[3]}</Typography>
-                                {tasks.Richard}
+                                {tasks.richard}
                             </CardContent>
                         </Card>
                     </div>
@@ -191,26 +202,26 @@ export default class SemanticSurvey extends Component {
                 {/* {this.createChests(tasks)} */}
                     <Card className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
-                         onDrop={(e)=>this.onDrop(e, "Harish")}>
-                        <CardContent>
+                         onDrop={(e)=>this.onDrop(e, "harish")}>
+                         <CardContent>
                             <Typography className='chestTitle' gutterBottom>{names[0]}</Typography>
-                            {tasks.Harish}
+                            {tasks.harish}
                         </CardContent>
                     </Card>
                     <Card className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
-                         onDrop={(e)=>this.onDrop(e, "Isabelle")}>
-                        <CardContent>
+                         onDrop={(e)=>this.onDrop(e, "isabelle")}>
+                         <CardContent>
                             <Typography className='chestTitle' gutterBottom>{names[1]}</Typography>
-                            {tasks.Isabelle}
+                            {tasks.isabelle}
                         </CardContent>
                     </Card>
                     <Card className="three-container"
                          onDragOver={(e)=>this.onDragOver(e)}
-                         onDrop={(e)=>this.onDrop(e, "Andrew")}>
-                        <CardContent>
+                         onDrop={(e)=>this.onDrop(e, "andrew")}>
+                         <CardContent>
                             <Typography className='chestTitle' gutterBottom>{names[2]}</Typography>
-                            {tasks.Andrew}
+                            {tasks.andrew} 
                         </CardContent>
                     </Card>
                 </div>
@@ -227,8 +238,8 @@ export default class SemanticSurvey extends Component {
             timestampsInSnapshots: true
         })
         var tasks = {}
-        for (var i = 0; i < names.length; i++) {
-            tasks[names[i]] = [];
+        for (var i=0; i<names.length; i++){
+            tasks[names[i]]=[];
         }
         this.state.tasks.forEach ((t) => {
             if(t.category != "wip") {
@@ -238,6 +249,8 @@ export default class SemanticSurvey extends Component {
             }
         });
         console.log(tasks)
-        db.collection("test").add(tasks);
+        db.collection("test").add(
+            tasks
+        );
     }
 }
