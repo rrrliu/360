@@ -15,12 +15,10 @@ export default class Slider extends Component {
 
     increment() {
         this.props.updateVal(this.props.step, this.props.index);
-        this.addData();
     }
     
     decrement() {
         this.props.updateVal(-1*this.props.step, this.props.index);
-        this.addData();
     }
 
     render() {
@@ -32,17 +30,6 @@ export default class Slider extends Component {
                 <Button className='distButton' variant='outlined' onClick={() => this.increment()}>+</Button>
             </div>
         )
-    }
-  
-  addData() {
-        // Firebase stuff
-        const db = firebase.firestore();
-        db.settings({
-            timestampsInSnapshots: true
-        })
-        const userRef = db.collection("users").add({
-            test: 1
-        })
     }
     
 }
