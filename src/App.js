@@ -3,7 +3,6 @@ import {BrowserRouter as Router, Switch, Route} from 'react-router-dom';
 import GivePage from './Components/feedback/GivePage';
 import ReviewPage from './Components/feedback/ReviewPage';
 import Distribution from './Components/Distribution/Distribution';
-import NewDashboard from './Components/NewDashboard/NewDashboard';
 import PropTypes from 'prop-types';
 import './App.css';
 import Dashboard from './Components/Dashboard/Dashboard'
