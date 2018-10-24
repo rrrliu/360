@@ -22,6 +22,23 @@ import config from '../../firebase/firebase';
 import firebase from '../../firebase/firebase';
 import App from '../../App';
 
+const teams = [
+    ['Richard L', 'Harish P', 'Isabelle Z', 'Andrew K'],
+    ['Austin S', 'Ethan M', 'Elliot L', 'Hannah V', 'Ryan C'],
+    ['Vincent W', 'Aadhrik K', 'Ashvin D', 'Manav R'],
+    ['Luofei C', 'Francis I', 'Chelsea L', 'Vikram S', 'David S'],
+    ['Michael T', 'Nikhil K', 'Prangan T', 'Jahnvi D', 'Diego G'],
+    ['Neha H', 'Nishi K', 'Dev O', 'Michael M', 'Birks S'],
+    ['Matthew H', 'Jaiveer S', 'Shiyuan G', 'Kelly H', 'Alexander M'],
+    ['Julius V', 'Amy G', 'Rimika B', 'Sravya B'],
+    ['Ayush J', 'Daniel J', 'Erel S', 'Kai C', 'Rishma M'],
+    ['Anika R', 'Sean L', 'Alara G', 'Quin E', 'Deven N'],
+    ['Charlie F', 'Chaitanya G', 'Rahul C', 'Neha N', 'Alfonso S'],
+]
+
+let crew = [];
+let username;
+
 const styles = theme => ({
     root: {
       display: 'flex',
@@ -36,6 +53,8 @@ function login() {
     function newLoginHappened(user) {
       if (user) {
         displayContent(user);
+        username = getName(user);
+        crew = findTeam(username);
       } else {
         var provider = new firebase.auth.GoogleAuthProvider();
         firebase.auth().signInWithRedirect(provider);
@@ -52,9 +71,28 @@ function displayContent(user) {
     });
 }
 
+function findTeam(name) {
+    console.log(name);
+    teams.forEach(team => {
+        if (team.includes(name)) {
+            let team_cp = team.slice();
+            let index = team_cp.indexOf(name);
+            team_cp.splice(index, index + 1);
+            console.log(team_cp);
+            return team_cp;
+        }
+    })
+}
+
+function getName(user) { // returns first name and last initial
+    let splitName = user.displayName.split(' ');
+    return splitName[0] + ' ' + splitName[1][0];
+}
+
 class NewDashboard extends React.Component {
     state = {
         open: false,
+        crew: []
       };
     
       handleToggle = () => {
@@ -70,6 +108,10 @@ class NewDashboard extends React.Component {
     
         this.setState({ open: false });
       };
+
+      componentDidMount() {
+        this.setState({crew: crew});
+      }
     
       render() {
         const { classes } = this.props;
