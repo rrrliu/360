@@ -134,15 +134,13 @@ class NewDashboard extends React.Component {
         //     }
         // });
         let weekList = ["Week 9", "Week 10", "Week 11", "Week 12", "Week 13", "Week 14", "Week 15"].map(function(key) {
-            return <NavLink to="/record" className="weekLink">
-                <ListItem button disableGutters disabled divider>
-                    <ListItemText primary={key} className='weekListItem'/>
-                </ListItem>
-            </NavLink>
+            // return <NavLink to="/record" className="weekLink">
+                return <Button disabled className='weekButton'>{key}</Button>
+            {/*</NavLink>*/}
         });
 
         return (
-            <div className='background' background="map.jpg">
+        <div className='background' background="map.jpg">
             <Button id="signout-button">Sign Out</Button>
             <h1 className='dashHeader'> {login()} Hi, <strong id="name"></strong>! </h1>
             <div className={classes.root}>
@@ -157,15 +155,15 @@ class NewDashboard extends React.Component {
                             // aria-haspopup="true"
                             // onClick={this.handleToggle}
                         >
-                            Embark.
+                            Embark
                         </Button>
                     </NavLink>
-                    <NavLink to="/record" className="weekLink">
-                        <ListItem button disableGutters divider>
-                            <ListItemText primary='Test Week' className='weekListItem'/>
-                        </ListItem>
-                    </NavLink>
-                    {weekList}
+                    <div className='buttonContainer'>
+                        <NavLink to="/record" className="weekLink">
+                            <Button className='weekButton'>Test Week</Button>
+                        </NavLink>
+                        {weekList}
+                    </div>
                     {/*<Popper open={open} anchorEl={this.anchorEl} transition disablePortal>*/}
                         {/*{({TransitionProps, placement}) => (*/}
                             {/*<Grow*/}
@@ -200,7 +198,7 @@ class NewDashboard extends React.Component {
                     {/*</Popper>*/}
                 </div>
             </div>
-            </div>
+        </div>
 
         );
     }
